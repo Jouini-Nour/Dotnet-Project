@@ -13,7 +13,15 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\favicon.ico",
+=======
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\tasks.css",
+      "PackagePath": "staticwebassets\\css\\tasks.css"
+    },
+    {
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\favicon.ico",
+>>>>>>> 014467465409d08ef886e3b7d0f5edf1ace57584
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
@@ -49,7 +57,15 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\lib\\bootstrap\\LICENSE",
+=======
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\tasks.js",
+      "PackagePath": "staticwebassets\\js\\tasks.js"
+    },
+    {
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\lib\\bootstrap\\LICENSE",
+>>>>>>> 014467465409d08ef886e3b7d0f5edf1ace57584
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
