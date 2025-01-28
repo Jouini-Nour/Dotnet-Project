@@ -7,9 +7,7 @@
     <title>@ViewData["Title"] - TalentCore</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
-    <link rel="stylesheet" href="~/css/meetings.css" />
     @RenderSection("Styles", required: false)
-    <link rel="stylesheet" href="~/css/Employees.css" />
 
 </head>
 <body>
@@ -22,17 +20,8 @@
                 <span class="title">TalentCore</span>
             </div>
 
-            <nav class="nav-menu">
-                <a href="/employees" class="nav-item">
-                    <img src="~/images/user.svg" />
-                    <span>Employees</span>
-                </a>
-                <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
-                    <img src="~/images/message-text.svg" />
-                    <span>Meetings</span>
-                </a>
-            </nav>
-
+            
+            @RenderSection("Navbar", required: false)
             <!-- Logout -->
             <div class="logout-container">
                 <a href="/logout" class="nav-item">

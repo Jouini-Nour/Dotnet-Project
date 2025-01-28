@@ -1,4 +1,18 @@
-﻿
+﻿@section Styles {
+    <link rel="stylesheet" href="~/css/Employees.css">
+}
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employees" ? "active" : "")">
+            <img src="~/images/document-text.svg" />
+            <span>Project Overview</span>
+        </a>
+        <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Tasks" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Tasks and Workflow</span>
+        </a>
+    </nav>
+}
 <div class="dashboard-container ">
     <div class="dashboard">
         <div  class="profile">
