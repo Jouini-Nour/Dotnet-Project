@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj": {}
+    "C:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj": {}
   },
   "projects": {
-    "D:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj": {
+    "C:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj",
+        "projectUniqueName": "C:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj",
         "projectName": "Dotnet-Project",
-        "projectPath": "D:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj",
+        "projectPath": "C:\\dotnet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "D:\\dotnet\\Dotnet-Project\\Dotnet-Project\\obj\\",
+        "outputPath": "C:\\dotnet\\Dotnet-Project\\Dotnet-Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,22 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
     <link rel="stylesheet" href="~/css/meetings.css" />
+    @RenderSection("Styles", required: false)
     <link rel="stylesheet" href="~/css/Employees.css" />
 
 </head>
@@ -45,10 +46,14 @@
         <main class="main-content">
             <!-- Header -->
             <header class="header">
-                <div class="search-container">
+                <!--div class="search-container">
                     <img src="~/images/search-normal.svg" />
                     <input type="text" placeholder="Search for employees, meetings and more " class="search-input" />
 
+                </!--div-->
+                <div class="search-container">
+                    <img src="~/images/search-normal.svg" alt="search icon" class="search-icon" />
+                    <input type="text" placeholder="Search for employees, meetings and more " class="search-input" />
                 </div>
                 <div class="header-actions">
                     <button class="settings-btn">
