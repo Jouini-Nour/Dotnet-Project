@@ -1,0 +1,51 @@
+﻿
+<div class="dashboard-container ">
+    <div class="dashboard">
+        <div  class="profile">
+            <div class="employee-section">
+                <partial name="_EmployeeDetails" />
+            </div>
+           
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h2 class="stat-title" >Tasks completed</h2>
+                        <span >for this month</span>
+                        <div class="stat-numbers">
+                            <span class="number">20</span>
+                            <span class="label">Tasks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-content">
+                    <h2 class="stat-title">
+                        Overdue tasks</h2>
+                        <span>for this month</span>
+                        <div class="stat-numbers">
+                            <span class="number">2</span>
+                            <span class="label">Tasks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="task-comment" >
+            <div class="tasks">
+                <partial name="_TaskList" />
+            </div>
+            <div class="comments">
+                <div class="comments-section">
+                    <div class="comment-input">
+                        <textarea placeholder="your comment here..."></textarea>
+                        <button class="add-button">Add</button>
+                    </div>
+
+                    <h3 class="comment-title">Previous comments</h3>
+                <partial name="_Comments"  />
+                </div>
+            </div>
+    </div>
+    </div>
+</div>

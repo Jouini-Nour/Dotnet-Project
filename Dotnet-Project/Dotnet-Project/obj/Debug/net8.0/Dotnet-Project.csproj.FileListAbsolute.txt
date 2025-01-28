@@ -33,3 +33,34 @@ C:\Users\Maram Ghouma\Dotnet-Project\Dotnet-Project\Dotnet-Project\obj\Debug\net
 C:\Users\Maram Ghouma\Dotnet-Project\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.pdb
 C:\Users\Maram Ghouma\Dotnet-Project\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.genruntimeconfig.cache
 C:\Users\Maram Ghouma\Dotnet-Project\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\ref\Dotnet-Project.dll
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\appsettings.Development.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\appsettings.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.staticwebassets.runtime.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.exe
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.deps.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.runtimeconfig.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.dll
+D:\dotnet\Dotnet-Project\Dotnet-Project\bin\Debug\net8.0\Dotnet-Project.pdb
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.AssemblyInfoInputs.cache
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.AssemblyInfo.cs
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.csproj.CoreCompileInputs.cache
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.MvcApplicationPartsAssemblyInfo.cache
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.RazorAssemblyInfo.cache
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.RazorAssemblyInfo.cs
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.sourcelink.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets.build.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets.development.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets\msbuild.Dotnet-Project.Microsoft.AspNetCore.StaticWebAssets.props
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets\msbuild.build.Dotnet-Project.props
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Dotnet-Project.props
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Dotnet-Project.props
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\staticwebassets.pack.json
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\scopedcss\bundle\Dotnet-Project.styles.css
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\scopedcss\projectbundle\Dotnet-Project.bundle.scp.css
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.dll
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\refint\Dotnet-Project.dll
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.pdb
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\Dotnet-Project.genruntimeconfig.cache
+D:\dotnet\Dotnet-Project\Dotnet-Project\obj\Debug\net8.0\ref\Dotnet-Project.dll
