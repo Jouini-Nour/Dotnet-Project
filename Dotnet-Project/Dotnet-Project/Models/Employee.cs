@@ -7,7 +7,7 @@
         public string? Department { get; set; }
         public string? Email { get; set; }
         
-        public ICollection<Task> Tasks { get; set; } = new List<Task>();
+        public ICollection<ProjectTask> Tasks { get; set; } = new List<ProjectTask>();
         
     }
 }
