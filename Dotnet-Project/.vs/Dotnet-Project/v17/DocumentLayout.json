@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\",
+  "WorkspaceRootPath": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B885C12-16E6-45F0-BE4D-18A928DDFD62}|\u00C9l\u00E9ments de solution{9B885C12-16E6-45F0-BE4D-18A928DDFD62}|C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\.gitignore.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{9B885C12-16E6-45F0-BE4D-18A928DDFD62}|\u00C9l\u00E9ments de solution{9B885C12-16E6-45F0-BE4D-18A928DDFD62}|solutionrelative:.gitignore.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\models\\projectdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\models\\projectdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\nour\\gl3\\sem 1\\frameworks\\projet\\dotnet-project\\dotnet-project\\dotnet-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,49 +34,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T21:24:07.396Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectDescription.cs",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\ProjectDescription.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Models\\ProjectDescription.cs",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\ProjectDescription.cs",
+              "RelativeToolTip": "Dotnet-Project\\Models\\ProjectDescription.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T12:15:43.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Models\\Project.cs",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Project.cs",
+              "RelativeToolTip": "Dotnet-Project\\Models\\Project.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T12:04:45.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore.txt",
-              "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\.gitignore.txt",
-              "RelativeDocumentMoniker": ".gitignore.txt",
-              "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\.gitignore.txt",
-              "RelativeToolTip": ".gitignore.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-01-27T23:05:18.68Z",
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Models\\Task.cs",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Task.cs",
+              "RelativeToolTip": "Dotnet-Project\\Models\\Task.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwBcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T11:44:49.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Models\\Employee.cs",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Models\\Employee.cs",
+              "RelativeToolTip": "Dotnet-Project\\Models\\Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T10:45:32.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "layout.css",
-              "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
-              "RelativeDocumentMoniker": "Dotnet-Project\\wwwroot\\css\\layout.css",
-              "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
-              "RelativeToolTip": "Dotnet-Project\\wwwroot\\css\\layout.css",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAswLEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-27T22:54:45.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-27T21:24:07.396Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Nour\\GL3\\Sem 1\\Frameworks\\Projet\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Dotnet-Project\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwA8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T23:22:49.331Z",
               "EditorCaption": ""
             }
           ]
