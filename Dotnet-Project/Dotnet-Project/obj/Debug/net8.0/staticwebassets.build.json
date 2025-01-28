@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mXT2lnqv7ymL2n/S1mImFplSzB0zC0IBF+AE1hmb5IM=",
+  "Hash": "7aUlX6NATr7fCHjFOPs4DbYQTcXXxvbgNgb9zkfq8So=",
   "Source": "Dotnet-Project",
   "BasePath": "_content/Dotnet-Project",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ioai4dumk9",
-      "Integrity": "kj6T4LMhV9wMrYSCw/0hQdyB53suR1eaHleTG62EoGo=",
+      "Fingerprint": "79eet5dxbe",
+      "Integrity": "VT/MjEr9VJyTdQht8DVLR6hPAJZ5xEXX+WH6qB6yn1M=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\layout.css"
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\tasks.css",
+      "SourceId": "Dotnet-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\",
+      "BasePath": "_content/Dotnet-Project",
+      "RelativePath": "css/tasks#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l4mw1v11ol",
+      "Integrity": "+/qrsInXIqu3NU0egb4IiO9loVZVwJiuH+2Ib1RN7SA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\tasks.css"
     },
     {
       "Identity": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\favicon.ico",
@@ -288,6 +309,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\tasks.js",
+      "SourceId": "Dotnet-Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\",
+      "BasePath": "_content/Dotnet-Project",
+      "RelativePath": "js/tasks#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0v3tmrkwx2",
+      "Integrity": "NOWJGQ/ucoDvDdorSMfwoFtTYe1m4jFxOxLlmd+ly00=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\tasks.js"
     },
     {
       "Identity": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
@@ -1489,6 +1531,51 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/layout.79eet5dxbe.css",
+      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3357"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VT/MjEr9VJyTdQht8DVLR6hPAJZ5xEXX+WH6qB6yn1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 28 Jan 2025 01:14:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "79eet5dxbe"
+        },
+        {
+          "Name": "label",
+          "Value": "css/layout.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VT/MjEr9VJyTdQht8DVLR6hPAJZ5xEXX+WH6qB6yn1M="
+        }
+      ]
+    },
+    {
       "Route": "css/layout.css",
       "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
       "Selectors": [],
@@ -1507,11 +1594,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"kj6T4LMhV9wMrYSCw/0hQdyB53suR1eaHleTG62EoGo=\""
+          "Value": "\"VT/MjEr9VJyTdQht8DVLR6hPAJZ5xEXX+WH6qB6yn1M=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 27 Jan 2025 22:54:50 GMT"
+          "Value": "Tue, 28 Jan 2025 01:14:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1521,52 +1608,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-kj6T4LMhV9wMrYSCw/0hQdyB53suR1eaHleTG62EoGo="
-        }
-      ]
-    },
-    {
-      "Route": "css/layout.ioai4dumk9.css",
-      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3357"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"kj6T4LMhV9wMrYSCw/0hQdyB53suR1eaHleTG62EoGo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 27 Jan 2025 22:54:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ioai4dumk9"
-        },
-        {
-          "Name": "label",
-          "Value": "css/layout.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-kj6T4LMhV9wMrYSCw/0hQdyB53suR1eaHleTG62EoGo="
+          "Value": "sha256-VT/MjEr9VJyTdQht8DVLR6hPAJZ5xEXX+WH6qB6yn1M="
         }
       ]
     },
@@ -1649,6 +1691,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+        }
+      ]
+    },
+    {
+      "Route": "css/tasks.css",
+      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\tasks.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+/qrsInXIqu3NU0egb4IiO9loVZVwJiuH+2Ib1RN7SA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 28 Jan 2025 00:49:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+/qrsInXIqu3NU0egb4IiO9loVZVwJiuH+2Ib1RN7SA="
+        }
+      ]
+    },
+    {
+      "Route": "css/tasks.l4mw1v11ol.css",
+      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\tasks.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+/qrsInXIqu3NU0egb4IiO9loVZVwJiuH+2Ib1RN7SA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 28 Jan 2025 00:49:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l4mw1v11ol"
+        },
+        {
+          "Name": "label",
+          "Value": "css/tasks.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+/qrsInXIqu3NU0egb4IiO9loVZVwJiuH+2Ib1RN7SA="
         }
       ]
     },
@@ -2551,6 +2675,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/tasks.0v3tmrkwx2.js",
+      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\tasks.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NOWJGQ/ucoDvDdorSMfwoFtTYe1m4jFxOxLlmd+ly00=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 28 Jan 2025 00:36:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0v3tmrkwx2"
+        },
+        {
+          "Name": "label",
+          "Value": "js/tasks.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NOWJGQ/ucoDvDdorSMfwoFtTYe1m4jFxOxLlmd+ly00="
+        }
+      ]
+    },
+    {
+      "Route": "js/tasks.js",
+      "AssetFile": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\tasks.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NOWJGQ/ucoDvDdorSMfwoFtTYe1m4jFxOxLlmd+ly00=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 28 Jan 2025 00:36:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NOWJGQ/ucoDvDdorSMfwoFtTYe1m4jFxOxLlmd+ly00="
         }
       ]
     },

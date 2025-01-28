@@ -1,0 +1,432 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/tasks.css">
+}
+
+
+    <!--div class="board">
+        <div class="column">
+            <div class="column-header">
+                <h2 class="column-title">Unassigned Tasks</h2>
+                <span class="count count-unassigned">3</span>
+            </div>
+            <div class="column-content">
+                <div class="task-card" data-task-id="1">
+                    <div class="options">⋮</div>
+                    <div class="task-icon document-icon">📄</div>
+                    <h3 class="task-title">Interface Design</h3>
+                    <p class="task-description">Designing the user interface expertise: UI/UX Designer</p>
+                    <div class="task-date">Monday</div>
+                </div>
+
+                <div class="task-card" data-task-id="2">
+                    <div class="options">⋮</div>
+                    <div class="task-icon document-icon">📄</div>
+                    <h3 class="task-title">CRUD</h3>
+                    <p class="task-description">Performing CRUD operations expertise: Backend Developer</p>
+                    <div class="task-date">14/01/25</div>
+                </div>
+            <button class="add-new">
+                <span>+</span>
+                <span>Add New</span>
+            </button>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="column-header">
+                <h2 class="column-title">In Progress</h2>
+                <span class="count count-progress">10</span>
+            </div>
+            <div class="column-content">
+                <div class="task-card" data-task-id="3">
+                    <div class="options">⋮</div>
+                    <div class="task-icon progress-icon">📊</div>
+                    <h3 class="task-title">Design System</h3>
+                    <p class="task-description">Conduct a user research by conducting online survey and draft out questionnaire...</p>
+                    <div class="task-date">Monday</div>
+                </div>
+
+                <div class="task-card" data-task-id="4">
+                    <div class="options">⋮</div>
+                    <div class="task-icon progress-icon">📊</div>
+                    <h3 class="task-title">Homely Mobile Design</h3>
+                    <p class="task-description">Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem........</p>
+                    <div class="task-date">2 days ago</div>
+                </div>
+
+                <div class="task-card" data-task-id="5">
+                    <div class="options">⋮</div>
+                    <div class="task-icon progress-icon">📊</div>
+                    <h3 class="task-title">Onboarding screens</h3>
+                    <p class="task-description">Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem........</p>
+                    <div class="task-date">2 days ago</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="column-header">
+                <h2 class="column-title">Completed</h2>
+                <span class="count count-completed">10</span>
+            </div>
+            <div class="column-content">
+                <div class="task-card" data-task-id="6">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Real Estate Landing Page</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+
+                <div class="task-card" data-task-id="7">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Meeting with the project manager</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+
+                <div class="task-card" data-task-id="7">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Meeting with the project manager</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+
+                <div class="task-card" data-task-id="7">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Meeting with the project manager</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+
+                <div class="task-card" data-task-id="7">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Meeting with the project manager</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+
+                <div class="task-card" data-task-id="8">
+                    <div class="options">⋮</div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">Real Estate Landing Page</h3>
+                    <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                    <div class="task-date">31/05/22</div>
+                </div>
+            </div>
+
+        </div>
+    </!--div-->
+
+    <!-- Modal -->
+    <!--div class="modal-backdrop" id="taskModal">
+        <div class="modal-content">
+            <h1 class="modal-title">Homely Mobile Design</h1>
+
+            <div class="modal-section">
+                <div class="modal-section-label">Description</div>
+                <div class="modal-section-content" id="modalDescription">
+                    Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem........
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-label">Department</div>
+                <div class="modal-section-content" id="modalDepartment">
+                    Flutter Designer
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <div class="modal-section-label">Employees Assigned</div>
+                <div class="modal-section-content" id="modalEmployees">
+                    Maleika Brown
+                </div>
+            </div>
+
+            <div class="modal-dates">
+                <div class="modal-section">
+                    <div class="modal-section-label">Status</div>
+                    <div class="modal-section-content" id="modalStatus">In Progress</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-label">Creation Date</div>
+                    <div class="modal-section-content" id="modalCreationDate">26/01/2025</div>
+                </div>
+                <div class="modal-section">
+                    <div class="modal-section-label">Due Date</div>
+                    <div class="modal-section-content" id="modalDueDate">01/02/2025</div>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-edit">Edit</button>
+                <button class="btn btn-complete">Mark As COMPLETED</button>
+            </div>
+        </div>
+    </!--div-->
+<div class="board">
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">Unassigned Tasks</h2>
+            <span class="count count-unassigned">3</span>
+        </div>
+        <div class="column-content">
+            <div class="task-card" data-task-id="1">
+                <div class="options">⋮</div>
+                <div class="task-icon document-icon">📄</div>
+                <h3 class="task-title">Interface Design</h3>
+                <p class="task-description">Designing the user interface expertise: UI/UX Designer</p>
+                <div class="task-date">Monday</div>
+            </div>
+
+            <div class="task-card" data-task-id="2">
+                <div class="options">⋮</div>
+                <div class="task-icon document-icon">📄</div>
+                <h3 class="task-title">CRUD</h3>
+                <p class="task-description">Performing CRUD operations expertise: Backend Developer</p>
+                <div class="task-date">14/01/25</div>
+            </div>
+            <button class="add-new">
+                <span>+</span>
+                <span>Add New</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">In Progress</h2>
+            <span class="count count-progress">10</span>
+        </div>
+        <div class="column-content">
+            <div class="task-card" data-task-id="3">
+                <div class="options">⋮</div>
+                <div class="task-icon progress-icon">📊</div>
+                <h3 class="task-title">Design System</h3>
+                <p class="task-description">Conduct a user research by conducting online survey and draft out questionnaire...</p>
+                <div class="task-date">Monday</div>
+            </div>
+
+            <div class="task-card" data-task-id="4">
+                <div class="options">⋮</div>
+                <div class="task-icon progress-icon">📊</div>
+                <h3 class="task-title">Homely Mobile Design</h3>
+                <p class="task-description">Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem........</p>
+                <div class="task-date">2 days ago</div>
+            </div>
+
+            <div class="task-card" data-task-id="5">
+                <div class="options">⋮</div>
+                <div class="task-icon progress-icon">📊</div>
+                <h3 class="task-title">Onboarding screens</h3>
+                <p class="task-description">Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem........</p>
+                <div class="task-date">2 days ago</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">Completed</h2>
+            <span class="count count-completed">10</span>
+        </div>
+        <div class="column-content">
+            <div class="task-card" data-task-id="6">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Real Estate Landing Page</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+
+            <div class="task-card" data-task-id="7">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Meeting with the project manager</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+
+            <div class="task-card" data-task-id="7">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Meeting with the project manager</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+
+            <div class="task-card" data-task-id="7">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Meeting with the project manager</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+
+            <div class="task-card" data-task-id="7">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Meeting with the project manager</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+
+            <div class="task-card" data-task-id="8">
+                <div class="options">⋮</div>
+                <div class="task-icon completed-icon">✓</div>
+                <h3 class="task-title">Real Estate Landing Page</h3>
+                <p class="task-description">Kudos to everyone on our effort to making the user research possible and designing the design systesm for the real estate project, I'd like us to proceed to designing the landing page........</p>
+                <div class="task-date">31/05/22</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Task Details Modal -->
+<div class="modal-backdrop" id="taskModal">
+    <div class="modal-content">
+        <h1 class="modal-title">Homely Mobile Design</h1>
+
+        <div class="modal-section">
+            <div class="modal-section-label">Description</div>
+            <div class="modal-section-content" id="modalDescription">
+                Prior to the discussion about solving house hunting problem in lagos, the team can go ahead with designing a mobile app that solve this problem...
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-label">Department</div>
+            <div class="modal-section-content" id="modalDepartment">
+                Flutter Designer
+            </div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-label">Employees Assigned</div>
+            <div class="modal-section-content" id="modalEmployees">
+                Maleika Brown
+            </div>
+        </div>
+
+        <div class="modal-dates">
+            <div class="modal-section">
+                <div class="modal-section-label">Status</div>
+                <div class="modal-section-content" id="modalStatus">In Progress</div>
+            </div>
+            <div class="modal-section">
+                <div class="modal-section-label">Creation Date</div>
+                <div class="modal-section-content" id="modalCreationDate">26/01/2025</div>
+            </div>
+            <div class="modal-section">
+                <div class="modal-section-label">Due Date</div>
+                <div class="modal-section-content" id="modalDueDate">01/02/2025</div>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn btn-delete">Delete</button>
+            <button class="btn btn-edit" id="editButton">Edit</button>
+            <button class="btn btn-complete">Mark As COMPLETED</button>
+        </div>
+    </div>
+</div>
+
+<!-- Add Task Modal -->
+<div class="modal-backdrop" id="addTaskModal">
+    <div class="modal-content simple-modal">
+        <h2 class="modal-title">New Task</h2>
+
+        <form id="addTaskForm">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Text">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Hint text"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department">
+                    <option value="" disabled selected>Text</option>
+                    <option value="ui-ux">blabla</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="frontend">Frontend Developer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="assignTo">assign to employee</label>
+                <select id="assignTo">
+                    <option value="" disabled selected>Text</option>
+                    <option value="charlie">Charlie Kristen</option>
+                    <option value="john">John Doe</option>
+                </select>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-cancel">cancel</button>
+                <button type="submit" class="btn btn-create">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Edit Task Modal (Simple Design) -->
+<div class="modal-backdrop" id="editTaskModal">
+    <div class="modal-content simple-modal">
+        <h2 class="modal-title">Edit Task</h2>
+
+        <form id="editTaskForm">
+            <div class="form-group">
+                <label for="editTitle">Title</label>
+                <input type="text" id="editTitle">
+            </div>
+
+            <div class="form-group">
+                <label for="editDescription">Description</label>
+                <textarea id="editDescription"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="editDepartment">Department</label>
+                <select id="editDepartment">
+                    <option value="ui-ux">UI/UX Designer</option>
+                    <option value="backend">Backend Developer</option>
+                    <option value="frontend">Frontend Developer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="editAssignTo">assign to employee</label>
+                <select id="editAssignTo">
+                    <option value="charlie">Charlie Kristen</option>
+                    <option value="john">John Doe</option>
+                </select>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-cancel">cancel</button>
+                <button type="submit" class="btn btn-update">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+     
+@section Scripts {
+    <script src="~/js/tasks.js"></script>
+}
+

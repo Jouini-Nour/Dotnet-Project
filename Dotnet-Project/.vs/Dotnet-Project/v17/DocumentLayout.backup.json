@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|c:\\users\\maram ghouma\\dotnet-project\\dotnet-project\\dotnet-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85DB0199-AB68-47B7-86D3-4225B767C9BB}|Dotnet-Project\\Dotnet-Project.csproj|solutionrelative:dotnet-project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,29 +30,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "layout.css",
               "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
               "RelativeDocumentMoniker": "Dotnet-Project\\wwwroot\\css\\layout.css",
               "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\layout.css",
               "RelativeToolTip": "Dotnet-Project\\wwwroot\\css\\layout.css",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAswLEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAcwG0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-27T22:54:45.34Z",
+              "WhenOpened": "2025-01-28T01:03:30.379Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Dotnet-Project\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-27T21:24:07.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-27T23:42:45.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Dotnet-Project\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Dotnet-Project\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T23:39:10.89Z"
             }
           ]
         },

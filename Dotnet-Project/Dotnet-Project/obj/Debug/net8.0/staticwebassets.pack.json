@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\css\\tasks.css",
+      "PackagePath": "staticwebassets\\css\\tasks.css"
+    },
+    {
       "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -47,6 +51,10 @@
     {
       "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\js\\tasks.js",
+      "PackagePath": "staticwebassets\\js\\tasks.js"
     },
     {
       "Id": "C:\\Users\\Maram Ghouma\\Dotnet-Project\\Dotnet-Project\\Dotnet-Project\\wwwroot\\lib\\bootstrap\\LICENSE",
