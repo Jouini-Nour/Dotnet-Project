@@ -1,6 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Meetings";
 }
+@section Styles {
+    <link rel="stylesheet" href="~/css/meetings.css">
+}
+@section Navbar {
+    <nav class="nav-menu">
+                <a href="/employees" class="nav-item">
+                    <img src="~/images/user.svg" />
+                    <span>Employees</span>
+                </a>
+                <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
+                    <img src="~/images/message-text.svg" />
+                    <span>Meetings</span>
+                </a>
+            </nav>
+}
 <div class=" text-white p-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>Planned meetings</h2>

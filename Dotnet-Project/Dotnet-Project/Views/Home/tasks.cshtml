@@ -6,7 +6,18 @@
     <link rel="stylesheet" href="~/css/tasks.css">
 }
 
-
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employees" ? "active" : "")">
+            <img src="~/images/document-text.svg" />
+            <span>Project Overview</span>
+        </a>
+        <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Tasks" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Tasks and Workflow</span>
+        </a>
+    </nav>
+}
     <!--div class="board">
         <div class="column">
             <div class="column-header">
