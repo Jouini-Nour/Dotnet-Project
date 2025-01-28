@@ -6,7 +6,7 @@
         public string? Name { get; set; }
         public string? Department { get; set; }
         public string? Email { get; set; }
-        
+        public string? Image { get; set; }
         public ICollection<Task> Tasks { get; set; } = new List<Task>();
         
     }

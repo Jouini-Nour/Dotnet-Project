@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Dotnet_Project.Models.Meeting>
+
+@{
     ViewData["Title"] = "Meetings";
 }
 @section Styles {
@@ -35,70 +37,30 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- @foreach (var meeting in Model) -->
+                @foreach (var meeting in Model) {
                 
                     <tr>
                         <td>
                             <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
+                                <img src="@meeting.Participant.Image" class="rounded-circle me-2" width="30" height="30" />
+                                <span>@meeting.Participant.Name</span>
                             </div>
                         </td>
                         <td>
                             <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
+                                <img src="@meeting.Moderator.Image" class="rounded-circle me-2" width="30" height="30" />
+                                <span>@meeting.Moderator.Name</span>
                             </div>
                         </td>
-                        <td>12/02/2025</td>
-                        <td>10:00</td>
-                        <td>subject</td>
+                        <td>@meeting.Date</td>
+                        <td>@meeting.Time</td>
+                        <td>@meeting.Subject</td>
                         <td>
                             <button class="btn btn-danger btn-sm">Cancel</button>
                         </td>
                     </tr>
                 
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
-                            </div>
-                        </td>
-                        <td>12/02/2025</td>
-                        <td>10:00</td>
-                        <td>subject</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Cancel</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="/images/avatar.svg" class="rounded-circle me-2" width="30" height="30" />
-                                <span>maram ben rhouma</span>
-                            </div>
-                        </td>
-                        <td>12/02/2025</td>
-                        <td>10:00</td>
-                        <td>subject</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm">Cancel</button>
-                        </td>
-                    </tr>
+                }
             </tbody>
         </table>
     </div>
