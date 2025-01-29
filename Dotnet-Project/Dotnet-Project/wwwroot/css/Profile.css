@@ -1,2 +1,186 @@
-﻿body {
+﻿
+
+.profile-section {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.profile-card {
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 2rem;
+    
+}
+.stats-feedback-container{
+    display:grid;
+    grid:1fr 1fr;
+}
+.profile-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.profile-name {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+
+.profile-title {
+    color: #666666;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    color: #666666;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.contact-value {
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+.dashboard-grid {
+    display: flex;
+    
+    gap: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-card {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 300px; 
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.colored-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.stat-info {
+    margin: 1rem 0;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.stat-unit {
+    color: #666666;
+    font-size: 0.875rem;
+}
+
+.stat-period {
+    color: #666666;
+    font-size: 0.75rem;
+}
+
+.evaluation-card {
+    grid-column: span 2;
+}
+
+.evaluation-select {
+    width: 100%;
+    padding: 0.75rem;
+    background: #333333;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    margin-top: 1rem;
+}
+
+.feedback-column h2 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feedback-item {
+    background: #1A1A1A;
+    border-radius: 12px;
+    padding: 1.25rem;
+    max-width: 300px; 
+}
+
+
+.feedback-date {
+    color: #ffffff;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-content {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-employee {
+    color: #666666;
+    font-size: 0.875rem;
+}
+
+
+.colored-icon {
+    background: linear-gradient(45deg, #FF6B6B, #556FFF);
+    border-radius: 8px;
+    padding: 6px;
 }

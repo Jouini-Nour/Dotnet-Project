@@ -4,13 +4,41 @@
 
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/employees" class="nav-item">
+        <a href="/profile-overview" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProfileOverview" ? "active" : "")">
             <img src="~/images/user.svg" />
-            <span>Employees</span>
+            <span>Profile Overview</span>
         </a>
-        <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
+        <a href="/stats-workflow" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "StatsWorkflow" ? "active" : "")">
             <img src="~/images/message-text.svg" />
-            <span>Meetings</span>
+            <span>Statistics & Workflow</span>
         </a>
     </nav>
 }
+<div class="dashboard-container">
+    <div class="dashboard">
+        
+        <div class="profile-overview">
+            <h2>Employee Profile</h2>
+            <div class="profile-details-grid">
+                
+                    <partial name="_profile-section" />
+                
+            </div>
+        </div>
+
+        
+        <div class="stats-feedback-container">
+            <div class="stats-section">
+                <h2>Statistics Overview</h2>
+                <partial name="_stats-grid" />
+            </div>
+            <div class="feedback-section">
+                <h2>Manager's Feedback</h2>
+                <div class="feedback-container">
+                    <partial name="_feedback-section" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
