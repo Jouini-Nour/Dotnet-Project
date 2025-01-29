@@ -4,13 +4,13 @@
 
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/profile-overview" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProfileOverview" ? "active" : "")">
+        <a href="@Url.Action("Index", "Employee")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">
             <img src="~/images/user.svg" />
-            <span>Profile Overview</span>
+            <span>Employees</span>
         </a>
-        <a href="/stats-workflow" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "StatsWorkflow" ? "active" : "")">
+        <a href="@Url.Action("Index", "Meeting")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meeting" ? "active" : "")">
             <img src="~/images/message-text.svg" />
-            <span>Statistics & Workflow</span>
+            <span>Meetings</span>
         </a>
     </nav>
 }

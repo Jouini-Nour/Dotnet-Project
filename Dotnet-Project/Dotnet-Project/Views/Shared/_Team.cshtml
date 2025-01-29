@@ -1,57 +1,60 @@
-﻿<div class="team-section">
+﻿@model IEnumerable<Dotnet_Project.Models.Employee>
+
+<div class="team-section">
     
     <table class="team-table">
         <thead>
             <tr>
-                <th>NAME</th>
-                <th>ID</th>
-                <th>DEPARTMENT</th>
-                <th>POST</th>
-                <th>PHONE NUMBER</th>
-                <th>ASSIGNED TASK</th>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Department</th>
+                <th>Post</th>
+                <th>Phone Number</th>
+                <th>Evaluate</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <div class="member-info">
-                        <img src="~/images/refka.jpg" alt="refka" class="profile-img" />
-                        <span>Refka Mahjoub</span>
-                    </div>
-                </td>
-                <td>4.0</td>
-                <td>Design Challenge</td>
-                <td>Sr. UX Designer</td>
-                <td>12/02/23</td>
-                <td>Productivity</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="member-info">
-                        <img src="~/images/refka.jpg" alt="refka" class="profile-img" />
-                        <span>Refka Mahjoub</span>
-                    </div>
-                </td>
-                <td>4.0</td>
-                <td>Design Challenge</td>
-                <td>Sr. UX Designer</td>
-                <td>12/02/23</td>
-                <td>Productivity</td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="member-info">
-                        <img src="~/images/refka.jpg" alt="refka" class="profile-img" />
-                        <span>Refka Mahjoub</span>
-                    </div>
-                </td>
-                <td>4.0</td>
-                <td>Design Challenge</td>
-                <td>Sr. UX Designer</td>
-                <td>12/02/23</td>
-                <td>Productivity</td>
-            </tr>
-            
+             @foreach (var employee in Model)
+            {
+                <tr>
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="@employee.Image" alt="img" class="profile-img" />
+                            <span>@employee.Name</span>
+                        </div>
+                    </td>
+                    <div class="d-flex align-items-center">
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>@employee.Id </span>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>@employee.Department </span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>@employee.Post</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <span>@employee.Phone </span>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EmployeeManagement", "Employee", new { id = employee.Id })" class="btn btn-cancel text-white">
+                        Productivity
+                    </a>
+                    </td>
+                </tr>
+               
+            }
         </tbody>
     </table>
 </div>

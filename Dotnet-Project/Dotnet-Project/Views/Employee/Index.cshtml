@@ -4,31 +4,38 @@
     ViewData["Title"] = "Employee";
 }
 
-<div class="container">
-    <h2>Employee List</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Department</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var employee in Model)
-            {
-                    <tr>
-                        <td>@employee.Name</td>
-                        <td>@employee.Email</td>
-                        <td>@employee.Department</td>
-                        <td>
-                            <a href="@Url.Action("EmployeeManagement", "Employee", new { id = employee.Id })" class="btn btn-primary btn-sm">
-                                Manage
-                            </a>
-                        </td>
-                    </tr>
-            }
-        </tbody>
-    </table>
+@section Styles {
+    <link rel="stylesheet" href="~/css/total.css">
+}
+
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="@Url.Action("Index", "Employee")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">
+            <img src="~/images/user.svg" />
+            <span>Employees</span>
+        </a>
+        <a href="@Url.Action("Index", "Meeting")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meeting" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Meetings</span>
+        </a>
+    </nav>
+}
+
+<div class="dashboard-container">
+    <div class="dashboard">
+        <div class="overview-section">
+            <div class="stats-cards">
+                <partial name="_EmployeeStats" />
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Employees</h2>
+
+            </div>
+
+            <div class="team-members">
+                @Html.Partial("_Team", Model)
+            </div>
+        </div>
+    </div>
 </div>
