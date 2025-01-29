@@ -15,7 +15,13 @@ namespace Dotnet_Project.Controllers
 
         public IActionResult Index()
         {
-            return View("~/Views/Profile/Index.cshtml");
+            var model=new Employee();
+            model.Name = "John";
+            model.Department = "IT";
+            model.Post = "Developer";
+            
+            
+            return View("~/Views/Profile/Index.cshtml",model);
         }
 
 
