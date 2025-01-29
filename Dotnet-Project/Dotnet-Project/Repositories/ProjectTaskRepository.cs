@@ -4,9 +4,9 @@ namespace Dotnet_Project.Repositories
 {
     public class ProjectTaskRepository : IProjectTaskRepository
     {
-        private readonly DbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ProjectTaskRepository(DbContext context)
+        public ProjectTaskRepository(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -18,7 +18,7 @@ namespace Dotnet_Project.Repositories
 
         public async Task<ProjectTask> GetProjectTaskByIdAsync(int id)
         {
-            return await _context.Set<ProjectTask>().Include(pt => pt.Employee).FirstOrDefaultAsync(pt => pt.TaskId == id);
+            return await _context.ProjectTasks.Include(p=>p.Employee).FirstOrDefaultAsync(pt => pt.TaskId == id);
         }
 
         public async Task<ProjectTask> AddProjectTaskAsync(ProjectTask projectTask)
@@ -45,5 +45,11 @@ namespace Dotnet_Project.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task UpdateAsync(ProjectTask task)
+        {
+            _context.ProjectTasks.Update(task);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

@@ -9,5 +9,6 @@ namespace Dotnet_Project.Repositories
         Task<ProjectTask> AddProjectTaskAsync(ProjectTask projectTask);
         Task<ProjectTask> UpdateProjectTaskAsync(ProjectTask projectTask);
         Task<bool> DeleteProjectTaskAsync(int id);
+        Task UpdateAsync(ProjectTask task);
     }
 }
