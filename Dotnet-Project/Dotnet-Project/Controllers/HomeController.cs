@@ -15,7 +15,7 @@ namespace Dotnet_Project.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Total/Index.cshtml");
         }
 
         public IActionResult Privacy()
