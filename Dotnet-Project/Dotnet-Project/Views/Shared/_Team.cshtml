@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<Dotnet_Project.Models.Employee>
 
+@{
+    var actionName = ViewData["ActionName"] as string;
+    var controllerName = ViewData["ControllerName"] as string;
+}
+
 <div class="team-section">
     
     <table class="team-table">
@@ -48,7 +53,7 @@
                         </div>
                     </td>
                     <td>
-                        <a href="@Url.Action("EmployeeManagement", "Employee", new { id = employee.Id })" class="btn btn-cancel text-white">
+                        <a href="@Url.Action(actionName, controllerName , new { id = employee.Id })" class="btn btn-cancel text-white">
                         Productivity
                     </a>
                     </td>
