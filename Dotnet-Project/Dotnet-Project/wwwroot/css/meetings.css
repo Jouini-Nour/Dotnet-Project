@@ -64,7 +64,7 @@
     border-radius: 10px;
     width: 700px;
     height: 650px;
-    padding-left: 100px;
+    padding-left:50px;
 }
 /* Form Container */
 
@@ -94,9 +94,8 @@ label {
 }
 
 /* Input Fields */
-input[type="participant"],
 input[type="subject"],
-input[type="moderator"],
+.number,
 input[type="date"],
 input[type="time"],
 textarea {

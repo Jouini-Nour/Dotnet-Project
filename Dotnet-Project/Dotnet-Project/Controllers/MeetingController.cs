@@ -2,24 +2,26 @@
 using Dotnet_Project.Repositories.Meetings;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
 {
     public class MeetingController : Controller
     {
         private readonly IMeetingRepository _repository;
+        private readonly ApplicationDbContext _db;
 
-        public MeetingController(IMeetingRepository repository)
+        public MeetingController(IMeetingRepository repository, ApplicationDbContext db)
         {
             _repository = repository;
+            _db = db;
         }
 
         public IActionResult Index()
         {
             var meetings = _repository.GetAll();
-           
-
-            return View(meetings);
+            ViewData["Meetings"] = meetings;
+            return View();
         }
 
         public IActionResult Details(int id)
@@ -31,23 +33,19 @@ namespace Dotnet_Project.Controllers
             }
             return View(meeting);
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
+        
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public IActionResult Create(Meeting meeting)
         {
             if (ModelState.IsValid)
             {
                 _repository.Add(meeting);
-
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
 
-            return NotFound();
+            ViewBag.Employees = new SelectList(_db.Employees, "Id");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)

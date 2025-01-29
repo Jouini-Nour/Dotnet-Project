@@ -20,10 +20,10 @@ namespace Dotnet_Project.Repositories.Meetings
                 return meeting;
             }
 
-            public List<Meeting> GetAll()
+            public IEnumerable<Meeting> GetAll()
             {
                 return _context.Set<Meeting>()
-                 .Include(m => m.Participant)
+                            .Include(m => m.Participant)
                            .Include(m => m.Moderator)
                            .ToList();
             }

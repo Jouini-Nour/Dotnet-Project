@@ -1,9 +1,11 @@
-﻿@section Styles {
+﻿@model Dotnet_Project.Models.Employee; 
+
+@section Styles {
     <link rel="stylesheet" href="~/css/Employees.css">
 }
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employees" ? "active" : "")">
+        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">
             <img src="~/images/document-text.svg" />
             <span>Project Overview</span>
         </a>
@@ -17,7 +19,7 @@
     <div class="dashboard">
         <div  class="profile">
             <div class="employee-section">
-                <partial name="_EmployeeDetails" />
+                @Html.Partial("_EmployeeDetails", Model)
             </div>
            
                 <div class="stat-card">

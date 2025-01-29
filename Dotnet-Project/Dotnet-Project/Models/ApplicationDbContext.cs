@@ -53,6 +53,7 @@
                    Id = 1,
                    Name = "John Doe",
                    Department = "Engineering",
+                   Phone = "23456654",
                    Email = "johndoe@example.com",
                    Image = "https://example.com/images/johndoe.jpg"
                },
@@ -61,6 +62,7 @@
                    Id = 2,
                    Name = "Jane Smith",
                    Department = "Marketing",
+                   Phone = "23456654",
                    Email = "janesmith@example.com",
                    Image = "https://example.com/images/janesmith.jpg"
                },
@@ -69,6 +71,7 @@
                    Id = 3,
                    Name = "Alice Johnson",
                    Department = "HR",
+                   Phone = "23456654",
                    Email = "alicejohnson@example.com",
                    Image = "https://example.com/images/alicejohnson.jpg"
                });
