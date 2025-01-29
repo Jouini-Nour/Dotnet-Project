@@ -18,7 +18,12 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            modelBuilder.Entity<ProjectTask>()
+                    .ToTable("ProjectTasks");
+            modelBuilder.Entity<Employee>()
+                      .HasMany(e => e.Tasks)
+                      .WithOne(t => t.Employee)
+                      .HasForeignKey(t => t.EmployeeId);
             // Configure relationships and other constraints if necessary
             modelBuilder.Entity<ProjectTask>(entity =>
             {
@@ -35,16 +40,17 @@
                       .HasDefaultValueSql("GETDATE()");
             });
 
-            modelBuilder.Entity<Meeting>()
-           .HasOne(m => m.Moderator)  
-           .WithMany() 
-           .HasForeignKey(m => m.ModeratorId)  
-           .OnDelete(DeleteBehavior.Cascade);  
 
             modelBuilder.Entity<Meeting>()
-                .HasOne(m => m.Participant)  
-                .WithMany()  
-                .HasForeignKey(m => m.ParticipantId)  
+           .HasOne(m => m.Moderator)
+           .WithMany()
+           .HasForeignKey(m => m.ModeratorId)
+           .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Meeting>()
+                .HasOne(m => m.Participant)
+                .WithMany()
+                .HasForeignKey(m => m.ParticipantId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Employee>().HasData(
@@ -145,11 +151,9 @@
                     CreationDate = new DateTime(2024, 12, 31),
                     Description = "Fix the login page bug on the company website."
                 }
-            ); */
-
-
+            );
+           
+        }
     }
-    }
-    
 
 }

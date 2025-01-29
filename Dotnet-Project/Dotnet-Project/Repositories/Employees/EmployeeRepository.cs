@@ -1,4 +1,5 @@
 ﻿using Dotnet_Project.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Repositories.Employees
 {
@@ -13,12 +14,18 @@ namespace Dotnet_Project.Repositories.Employees
 
         public List<Employee> GetAllEmployees()
         {
-            return _context.Employees.ToList();
+            return _context.Employees
+                            .Include(e => e.Tasks)
+                            .ToList();        
         }
 
         public Employee GetEmployeeById(int id)
         {
-            return _context.Employees.FirstOrDefault(e => e.Id == id);
+            return _context.Employees
+                .Include(e => e.Tasks)
+                .FirstOrDefault(e => e.Id == id);
+                
+     
         }
 
         public void AddEmployee(Employee employee)

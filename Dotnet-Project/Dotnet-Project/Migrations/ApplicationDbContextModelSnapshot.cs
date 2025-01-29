@@ -17,7 +17,7 @@ namespace Dotnet_Project.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -157,10 +157,10 @@ namespace Dotnet_Project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EmployeeId")
+                    b.Property<int?>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EmployeeId1")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -172,11 +172,51 @@ namespace Dotnet_Project.Migrations
 
                     b.HasKey("TaskId");
 
-                    b.HasIndex("EmployeeId");
+                    b.HasIndex("EmployeeId")
+                        .HasDatabaseName("IX_ProjectTasks_EmployeeId");
 
-                    b.HasIndex("EmployeeId1");
+                    b.ToTable("ProjectTasks", (string)null);
 
-                    b.ToTable("Tasks");
+                    b.HasData(
+                        new
+                        {
+                            TaskId = 1,
+                            CreationDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Fix the login page bug on the company website.",
+                            EmployeeId = 1,
+                            Status = 1,
+                            Title = "Fix website bug",
+                            dueDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            TaskId = 2,
+                            CreationDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Update the records of all employees in the HR system.",
+                            EmployeeId = 2,
+                            Status = 0,
+                            Title = "Update employee records",
+                            dueDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            TaskId = 3,
+                            CreationDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Prepare and submit the quarterly financial report to management.",
+                            EmployeeId = 3,
+                            Status = 2,
+                            Title = "Prepare financial report",
+                            dueDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            TaskId = 4,
+                            CreationDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Fix the login page bug on the company website.",
+                            Status = 0,
+                            Title = "Fix website bug",
+                            dueDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Dotnet_Project.Models.Meeting", b =>
@@ -201,14 +241,9 @@ namespace Dotnet_Project.Migrations
             modelBuilder.Entity("Dotnet_Project.Models.ProjectTask", b =>
                 {
                     b.HasOne("Dotnet_Project.Models.Employee", "Employee")
-                        .WithMany()
-                        .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Dotnet_Project.Models.Employee", null)
                         .WithMany("Tasks")
-                        .HasForeignKey("EmployeeId1");
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Employee");
                 });

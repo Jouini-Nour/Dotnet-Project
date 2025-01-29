@@ -89,6 +89,17 @@ namespace Dotnet_Project.Controllers
             _employeeRepository.DeleteEmployee(id);
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult EmployeeManagement(int id)
+        {
+            var employee = _employeeRepository.GetEmployeeById(id);  // Récupérer l'employé par ID
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            // Passer l'employé au modèle de la partial view
+            return View("EmployeeManagement", employee);
+        }
     }
 }
 

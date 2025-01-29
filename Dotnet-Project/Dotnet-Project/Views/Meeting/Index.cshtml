@@ -1,5 +1,6 @@
 ﻿@model Dotnet_Project.Models.Meeting
 
+
 @{
     ViewData["Title"] = "Meeting";
     var meetings = ViewData["Meetings"] as List<Dotnet_Project.Models.Meeting>;
@@ -116,7 +117,7 @@
 
                 <div class="form-group">
                     <label asp-for="ModeratorId">Moderator</label>
-                    <select  asp-for="ModeratorId" asp-items="ViewBag.Employees" class="form-control number">
+                    <select asp-for="ModeratorId" asp-items="ViewBag.Employees" class="form-control number">
                         <option value="">Select Moderator</option>
                     </select>
                 </div>
@@ -133,7 +134,7 @@
 
                 <div class="form-group">
                     <label asp-for="Subject">Subject</label>
-                    <input asp-for="Subject" class="form-control" />
+                    <input asp-for="Subject" class="form-control subject" />
                 </div>
                 <div class="modal-actions">
                 <button type="submit" class="btn btn-save">Save</button>

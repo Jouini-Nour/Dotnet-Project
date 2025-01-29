@@ -1,4 +1,9 @@
-﻿@model Dotnet_Project.Models.Employee; 
+﻿
+@model Dotnet_Project.Models.Employee; 
+
+@{
+    ViewData["Title"] = "EmployeeManagement";
+}
 
 @section Styles {
     <link rel="stylesheet" href="~/css/Employees.css">
@@ -49,7 +54,7 @@
             </div>
         <div class="task-comment" >
             <div class="tasks">
-                <partial name="_TaskList" />
+                 @Html.Partial("_TaskList", Model.Tasks) 
             </div>
             <div class="comments">
                 <div class="comments-section">
