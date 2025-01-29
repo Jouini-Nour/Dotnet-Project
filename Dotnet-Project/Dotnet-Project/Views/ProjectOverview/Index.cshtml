@@ -1,5 +1,5 @@
 ﻿@section Styles {
-    <link rel="stylesheet" href="~/css/total.css">
+    <link rel="stylesheet" href="~/css/ProjectOverview.css">
 }
 
 @section Navbar {
@@ -17,13 +17,23 @@
 
 <div class="dashboard-container">
     <div class="dashboard">
-        <div class="overview-section">
-           
-
-            <div class="project-details">
-                <partial name="_ProjectDetails" />
+        <div class="project-overview">
+            <h2>details</h2>
+            <div class="details-grid">
+                <div class="details-section">
+                    
+                    <partial name="_ProjectDetails" />
+                </div>
+                <div class="purpose-section" >
+                    <h2>Purpose and Key Impact</h2>
+                    <partial name="_PurposeImpact" />
+                </div>
             </div>
-
+            <h2>Project team members </h2>
+            <div class="team-section">
+                
+                <partial name="_Team" />
+            </div>
         </div>
     </div>
 </div>

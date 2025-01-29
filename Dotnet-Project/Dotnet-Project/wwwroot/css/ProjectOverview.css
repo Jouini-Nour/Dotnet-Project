@@ -1,2 +1,262 @@
-﻿body {
+﻿
+.dashboard-container {
+    padding: 20px;
+    background-color: #141414;
+    min-height: 100vh;
+}
+.period-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #1a1a1a; 
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid #007bff; 
+    width: 300px;
+    height: 150px;
+}
+.stage-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1a1a1a;
+    padding: 15px 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid #ff3b30;
+    width: 300px;
+    height: 150px;
+}
+.steps-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .steps-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .steps-icon h3 {
+        font-size: 18px;
+        color: white;
+        margin: 0;
+    }
+
+.stage-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.purpose-section {
+    background-color: #1a1a1a; /* Dark background */
+    padding: 20px;
+    border-left: 5px solid #ffcc00; /* Yellow left border */
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.period-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.period-content h3 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+.dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #A1A1A1;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+    .nav-item.active {
+        background: linear-gradient(90deg, #FF6B6B, #556FFF);
+        color: white;
+    }
+
+    .nav-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+
+.details-section {
+    
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.period-card {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: #242424;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.period-icon {
+    width: 40px;
+    height: 40px;
+    background: #2D2D2D;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage-card {
+    padding: 20px;
+    background: #242424;
+    border-radius: 8px;
+}
+
+.stage-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #FF6B6B;
+}
+
+
+.purpose-section {
+    background: #1E1E1E;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.purpose-text {
+    color: #A1A1A1;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.impact-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+    .impact-list li {
+        margin-bottom: 12px;
+        padding-left: 20px;
+        position: relative;
+        color: #A1A1A1;
+    }
+
+        .impact-list li::before {
+            content: "•";
+            color: #FF6B6B;
+            position: absolute;
+            left: 0;
+        }
+
+.impact-title {
+    color: #E4E4E4;
+    font-weight: 500;
+}
+
+
+.team-section {
+    background: #1E1E1E;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .team-table th {
+        text-align: left;
+        padding: 16px;
+        background: #242424;
+        color: #A1A1A1;
+        font-weight: normal;
+    }
+
+    .team-table td {
+        padding: 16px;
+        border-bottom: 1px solid #242424;
+    }
+
+.team-member {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.member-avatar {
+    width: 40px;
+    height: 40px;
+    background: #2D2D2D;
+    border-radius: 50%;
+}
+
+.member-name {
+    font-weight: 500;
+    color: #E4E4E4;
+}
+
+.productivity-badge {
+    padding: 4px 12px;
+    background: rgba(85, 111, 255, 0.1);
+    color: #556FFF;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.stage-icon {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+h2 {
+    color: #E4E4E4;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #E4E4E4;
+    font-size: 16px;
 }
