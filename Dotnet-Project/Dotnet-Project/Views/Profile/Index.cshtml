@@ -1,0 +1,16 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="~/css/Profile.css">
+}
+
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="/employees" class="nav-item">
+            <img src="~/images/user.svg" />
+            <span>Employees</span>
+        </a>
+        <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Meetings</span>
+        </a>
+    </nav>
+}
