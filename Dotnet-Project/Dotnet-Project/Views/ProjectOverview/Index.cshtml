@@ -1,0 +1,29 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="~/css/total.css">
+}
+
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="/project-overview" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectOverview" ? "active" : "")">
+            <img src="~/images/document-text.svg" />
+            <span>Project Overview</span>
+        </a>
+        <a href="/tasks-workflow" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "TasksWorkflow" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Tasks & Workflow</span>
+        </a>
+    </nav>
+}
+
+<div class="dashboard-container">
+    <div class="dashboard">
+        <div class="overview-section">
+           
+
+            <div class="project-details">
+                <partial name="_ProjectDetails" />
+            </div>
+
+        </div>
+    </div>
+</div>

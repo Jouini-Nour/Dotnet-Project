@@ -4,13 +4,13 @@
 
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/project-overview" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectOverview" ? "active" : "")">
-            <img src="~/images/chart-bar.svg" />
-            <span>Project Overview</span>
+        <a href="/employees" class="nav-item">
+            <img src="~/images/user.svg" />
+            <span>Employees</span>
         </a>
-        <a href="/tasks-workflow" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "TasksWorkflow" ? "active" : "")">
-            <img src="~/images/tasks.svg" />
-            <span>Tasks & Workflow</span>
+        <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Meetings</span>
         </a>
     </nav>
 }
@@ -22,8 +22,9 @@
                 <partial name="_EmployeeStats" />
             </div>
 
-            <div class="project-details">
-                <partial name="_ProjectDetails" />
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Employees</h2>
+                
             </div>
 
             <div class="team-members">

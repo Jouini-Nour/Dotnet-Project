@@ -1,0 +1,441 @@
+﻿@model Dotnet_Project.Models.TaskBoardViewModel
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/tasks.css">
+}
+<div class="board">
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">Unassigned Tasks</h2>
+            <span class="count count-unassigned">@Model.UnassignedTasks.Count()</span>
+        </div>
+        <div class="column-content" data-status="NotStarted">
+            @if (Model != null)
+            {
+                @foreach (var task in (Model.UnassignedTasks ?? Enumerable.Empty<ProjectTask>()))
+                {
+                    <div class="task-card" data-task-id="@task.TaskId" data-bs-toggle="modal" data-bs-target="#taskModal"
+                         onclick="loadTaskDetails(@task.TaskId)">
+                        <div class="options" data-bs-toggle="modal" data-bs-target="#taskModal"
+                             onclick="loadTaskDetails(@task.TaskId)">
+                            ⋮
+                        </div>
+                        <div class="task-icon document-icon">📄</div>
+                        <h3 class="task-title">@task.Title</h3>
+                        <p class="task-description">@(task.Description?.Length > 100 ? task.Description.Substring(0, 97) + "..." : task.Description)</p>
+                        <div class="task-meta">
+                            <span class="task-assignee">@(task.Employee?.Name ?? "Unassigned")</span>
+                            <span class="task-date">@task.dueDate.ToString("dd/MM/yy")</span>
+                        </div>
+                    </div>
+                }}
+            else
+            {
+                <p>No tasks available.</p>
+            }
+            <button class="add-new" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+                <span>+</span>
+                <span>Add New</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">In Progress</h2>
+            <span class="count count-progress">@Model.InProgressTasks.Count()</span>
+        </div>
+        <div class="column-content" data-status="InProgress">
+            @foreach (var task in Model.InProgressTasks)
+            {
+                <div class="task-card" data-task-id="@task.TaskId" data-bs-toggle="modal" data-bs-target="#taskModal"
+                     onclick="loadTaskDetails(@task.TaskId)">
+                    <div class="options" data-bs-toggle="modal" data-bs-target="#taskModal"
+                         onclick="loadTaskDetails(@task.TaskId)">
+                        ⋮
+                    </div>
+                    <div class="task-icon progress-icon">📊</div>
+                    <h3 class="task-title">@task.Title</h3>
+                    <p class="task-description">@(task.Description?.Length > 100 ? task.Description.Substring(0, 97) + "..." : task.Description)</p>
+                    <div class="task-meta">
+                        <span class="task-assignee">@(task.Employee?.Name ?? "Unassigned")</span>
+                        <span class="task-date">@task.dueDate.ToString("dd/MM/yy")</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="column-header">
+            <h2 class="column-title">Completed</h2>
+            <span class="count count-completed">@Model.CompletedTasks.Count()</span>
+        </div>
+        <div class="column-content" data-status="Completed">
+            @foreach (var task in Model.CompletedTasks)
+            {
+                <div class="task-card" data-task-id="@task.TaskId" data-bs-toggle="modal" data-bs-target="#taskModal"
+                     onclick="loadTaskDetails(@task.TaskId)">
+                    <div class="options" data-bs-toggle="modal" data-bs-target="#taskModal"
+                         onclick="loadTaskDetails(@task.TaskId)">
+                        ⋮
+                    </div>
+                    <div class="task-icon completed-icon">✓</div>
+                    <h3 class="task-title">@task.Title</h3>
+                    <p class="task-description">@(task.Description?.Length > 100 ? task.Description.Substring(0, 97) + "..." : task.Description)</p>
+                    <div class="task-meta">
+                        <span class="task-assignee">@(task.Employee?.Name ?? "Unassigned")</span>
+                        <span class="task-date">@task.dueDate.ToString("dd/MM/yy")</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Task Details Modal -->
+<div class="modal-backdrop" id="taskModal">
+    <div class="modal-content">
+        <h1 class="modal-title" id="modalTitle"></h1>
+
+        <div class="modal-section">
+            <div class="modal-section-label">Description</div>
+            <div class="modal-section-content" id="modalDescription"></div>
+        </div>
+
+        <div class="modal-section">
+            <div class="modal-section-label">Assigned To</div>
+            <div class="modal-section-content" id="modalEmployee"></div>
+        </div>
+
+        <div class="modal-dates">
+            <div class="modal-section">
+                <div class="modal-section-label">Status</div>
+                <div class="modal-section-content" id="modalStatus"></div>
+            </div>
+            <div class="modal-section">
+                <div class="modal-section-label">Creation Date</div>
+                <div class="modal-section-content" id="modalCreationDate"></div>
+            </div>
+            <div class="modal-section">
+                <div class="modal-section-label">Due Date</div>
+                <div class="modal-section-content" id="modalDueDate"></div>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn btn-delete" onclick="deleteTask()">Delete</button>
+            <button type="button" class="btn btn-edit" onclick="loadTaskDetailsForEdit(window.taskId)" data-bs-toggle="modal" data-bs-target="#editTaskModal">Edit</button>
+            <button class="btn btn-complete" onclick="completeTask()">Mark As Completed</button>
+        </div>
+    </div>
+</div>
+<!-- Add Task Modal -->
+<div class="modal-backdrop" id="addTaskModal">
+    <div class="modal-content simple-modal">
+        <h2 class="modal-title">New Task</h2>
+
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type="text" id="Title" asp-for="NewTask.Title" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea id="Description" asp-for="NewTask.Description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="EmployeeId">Assign To</label>
+                <select id="EmployeeId" asp-for="NewTask.EmployeeId">
+                    @foreach (var employee in Model.EmployeeList)
+                    {
+                        <option value="@employee.Id" selected="@(Model.NewTask.EmployeeId == employee.Id ? "selected" : null)">
+                            @employee.Name
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" asp-for="NewTask.dueDate" required>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-cancel">Cancel</button>
+                <button type="submit" class="btn btn-create">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Edit Task Modal -->
+<div class="modal fade custom-modal" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-custom">
+        <div class="modal-content simple-modal">
+            <h2 class="modal-title" id="editTaskModalLabel">Edit Task</h2>
+            <form id="editTaskForm" method="post" action="@Url.Action("Edit", "ProjectTask")">
+                @Html.AntiForgeryToken()
+                <input type="hidden" id="editTaskId" name="id">
+
+                <div class="form-group">
+                    <label for="editTitle">Title</label>
+                    <input type="text" id="editTitle" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription" name="description" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="editEmployeeId">Assign to Employee</label>
+                    <select id="editEmployeeId" name="employeeId">
+                        @foreach (var employee in Model.EmployeeList)
+                        {
+                            <option value="@employee.Id">@employee.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editDueDate">Due Date</label>
+                    <input type="date" id="editDueDate" name="dueDate" required>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-update">Update Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/tasks.js"></script>
+    <script>
+        // Drag and drop functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const taskCards = document.querySelectorAll('.task-card');
+            const columns = document.querySelectorAll('.column-content');
+
+            if (taskCards.length === 0) {
+                console.warn("No task cards found. Check if '.task-card' elements exist.");
+            } else {
+                taskCards.forEach(card => {
+                    card.setAttribute('draggable', true);
+                    card.addEventListener('dragstart', handleDragStart);
+                });
+            }
+
+            if (columns.length === 0) {
+                console.warn("No columns found. Check if '.column-content' elements exist.");
+            } else {
+                columns.forEach(column => {
+                    column.addEventListener('dragover', handleDragOver);
+                    column.addEventListener('drop', handleDrop);
+                });
+            }
+        });
+
+        function handleDragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.getAttribute('data-task-id'));
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const taskId = e.dataTransfer.getData('text/plain');
+            const newStatus = e.currentTarget.getAttribute('data-status');
+
+            if (!taskId || !newStatus) {
+                console.error("Missing taskId or newStatus.");
+                return;
+            }
+
+            fetch('/Task/UpdateStatus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]')?.value || ''
+                },
+                body: JSON.stringify({ taskId: parseInt(taskId), newStatus: newStatus })
+            }).then(response => {
+                if (response.ok) {
+                    location.reload();
+                } else {
+                    console.error("Failed to update task status.");
+                }
+            }).catch(error => console.error("Fetch error:", error));
+        }
+
+
+
+                // Function to load task details into edit form
+        function loadTaskDetailsForEdit(taskId) {
+            // First get the task details from the server
+            fetch(`/ProjectTask/Details/${taskId}`)
+                .then(response => response.json())
+                .then(task => {
+                    // Populate the edit form fields
+                    document.getElementById('editTaskId').value = task.taskId;
+                    document.getElementById('editTitle').value = task.title;
+                    document.getElementById('editDescription').value = task.description;
+
+                    // Handle the employee selection
+                    const employeeSelect = document.getElementById('editEmployeeId');
+                    if (task.employeeName === 'Unassigned') {
+                        employeeSelect.value = '';
+                    } else {
+                        // Find and select the correct employee option
+                        Array.from(employeeSelect.options).forEach(option => {
+                            if (option.text === task.employeeName) {
+                                employeeSelect.value = option.value;
+                            }
+                        });
+                    }
+
+                    // Format the date for the input field (YYYY-MM-DD format)
+                    const dueDate = new Date(task.dueDate);
+                    const formattedDate = dueDate.toISOString().split('T')[0];
+                    document.getElementById('editDueDate').value = formattedDate;
+                })
+                .catch(error => {
+                    console.error('Error loading task details:', error);
+                    alert('Failed to load task details. Please try again.');
+                });
+        }
+
+        // Add event listener for form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const editForm = document.getElementById('editTaskForm');
+
+            editForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Get form data
+                const formData = new FormData(editForm);
+
+                // Submit the form using fetch
+                fetch(editForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Close the modal and refresh the page to show updated data
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('editTaskModal'));
+                        modal.hide();
+                        window.location.reload();
+                    } else {
+                        throw new Error('Failed to update task');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating task:', error);
+                    alert('Failed to update task. Please try again.');
+                });
+            });
+        });
+
+                // Function to handle completing a task
+        function completeTask() {
+            const taskId = window.taskId; // Get the current task ID
+
+            if (!taskId) {
+                alert('No task selected');
+                return;
+            }
+
+
+            fetch(`/ProjectTask/Complete/${taskId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Close the modal and refresh the page
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('taskModal'));
+                    modal.hide();
+                    window.location.reload();
+                } else {
+                    throw new Error('Failed to complete task');
+                }
+            })
+            .catch(error => {
+                console.error('Error completing task:', error);
+                alert('Failed to complete task. Please try again.');
+            });
+        }
+
+        // Function to handle deleting a task
+        function deleteTask() {
+            const taskId = window.taskId; // Get the current task ID
+
+            if (!taskId) {
+                alert('No task selected');
+                return;
+            }
+
+
+            fetch(`/ProjectTask/Delete/${taskId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Close the modal and refresh the page
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('taskModal'));
+                    modal.hide();
+                    window.location.reload();
+                } else {
+                    throw new Error('Failed to delete task');
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting task:', error);
+                alert('Failed to delete task. Please try again.');
+            });
+        }
+
+        // Update the loadTaskDetails function to store the taskId globally
+        function loadTaskDetails(taskId) {
+            window.taskId = taskId; // Store taskId for other functions to use
+
+            fetch(`/ProjectTask/Details/${taskId}`)
+                .then(response => response.json())
+                .then(task => {
+                    document.getElementById('modalTitle').textContent = task.title;
+                    document.getElementById('modalDescription').textContent = task.description;
+                    document.getElementById('modalEmployee').textContent = task.employeeName || 'Unassigned';
+                    document.getElementById('modalStatus').textContent = task.status;
+                    document.getElementById('modalCreationDate').textContent = new Date(task.creationDate).toLocaleDateString();
+                    document.getElementById('modalDueDate').textContent = new Date(task.dueDate).toLocaleDateString();
+
+                    // Show/hide complete button based on current status
+                    const completeButton = document.querySelector('.btn-complete');
+                    if (task.status === 'Completed') {
+                        completeButton.style.display = 'none';
+                    } else {
+                        completeButton.style.display = 'block';
+                    }
+                });
+        }
+    </script>
+}
