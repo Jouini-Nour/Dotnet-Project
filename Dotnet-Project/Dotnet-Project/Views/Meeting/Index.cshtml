@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Dotnet_Project.Models.Meeting>
 
 @{
-    ViewData["Title"] = "Meetings";
+    ViewData["Title"] = "Meeting";
 }
 @section Styles {
     <link rel="stylesheet" href="~/css/meetings.css">
@@ -12,7 +12,7 @@
                     <img src="~/images/user.svg" />
                     <span>Employees</span>
                 </a>
-                <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meetings" ? "active" : "")">
+                <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meeting" ? "active" : "")">
                     <img src="~/images/message-text.svg" />
                     <span>Meetings</span>
                 </a>
@@ -56,7 +56,9 @@
                         <td>@meeting.Time</td>
                         <td>@meeting.Subject</td>
                         <td>
-                            <button class="btn btn-danger btn-sm">Cancel</button>
+                            <form method="post" asp-action="DeleteConfirmed" asp-route-id="@meeting.Id">
+                                <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                            </form>
                         </td>
                     </tr>
                 
@@ -71,39 +73,38 @@
        <div class="modal-content">
           <h2>Schedule a meeting</h2>
          <div class="form">
-                            <form action="#" method="post">
+               <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label for="participant">Participant</label>
+                    <input type="number" id="participant" name="ParticipantId" class="form-control" />
+                </div>
 
-                    <div class="form-group">
-                        <label for="participant">Participant</label>
-                        <input type="participant" id="participant" name="participant" >
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <textarea id="subject" name="subject"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="moderator">Moderator</label>
-                        <input type="moderator" id="moderator" name="moderator" >
-                    </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="Subject" class="form-control"></textarea>
+                </div>
 
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date" >
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Time</label>
-                        <input type="time" id="time" name="time" >
-                    </div>
+                <div class="form-group">
+                    <label for="moderator">Moderator</label>
+                    <input type="number" id="moderator" name="ModeratorId" class="form-control" />
+                </div>
 
-                    
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="Date" class="form-control" />
+                </div>
 
-                    <div class="modal-actions">
-                        <button type="submit" class="btn btn-cancel">Cancel</button>
-                        <button type="submit" class="btn btn-save">Save</button>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="Time" class="form-control" />
+                </div>
 
-                    </div>
-
-                    </form>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-save">Save</button>
+                    <a href="@Url.Action("Index", "Meeting")" class="btn btn-cancel">Cancel</a>
+                </div>
+                </form>
+            
                     </div>
                     </div>
         </div>   

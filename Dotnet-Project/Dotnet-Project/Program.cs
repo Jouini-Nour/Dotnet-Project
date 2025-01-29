@@ -1,9 +1,14 @@
+using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Meetings;
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

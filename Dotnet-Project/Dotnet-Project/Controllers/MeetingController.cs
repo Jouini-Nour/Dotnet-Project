@@ -1,6 +1,7 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Meetings;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dotnet_Project.Controllers
 {
@@ -16,6 +17,8 @@ namespace Dotnet_Project.Controllers
         public IActionResult Index()
         {
             var meetings = _repository.GetAll();
+           
+
             return View(meetings);
         }
 
@@ -28,7 +31,6 @@ namespace Dotnet_Project.Controllers
             }
             return View(meeting);
         }
-
         public IActionResult Create()
         {
             return View();
@@ -41,9 +43,11 @@ namespace Dotnet_Project.Controllers
             if (ModelState.IsValid)
             {
                 _repository.Add(meeting);
+
                 return RedirectToAction(nameof(Index));
             }
-            return View(meeting);
+
+            return NotFound();
         }
 
         public IActionResult Edit(int id)
@@ -77,26 +81,21 @@ namespace Dotnet_Project.Controllers
             return View(meeting);
         }
 
-        public IActionResult Delete(int id)
-        {
-            var meeting = _repository.GetById(id);
-            if (meeting == null)
-            {
-                return NotFound();
-            }
-            return View(meeting);
-        }
-
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var success = _repository.Delete(id);
+            var meeting = _repository.GetById(id);  
+            if (meeting == null)
+            {
+                return NotFound();  
+            }
+            var success = _repository.Delete(id);  
             if (!success)
             {
-                return NotFound();
+                return NotFound();  
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index));  
         }
     }
 }

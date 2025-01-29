@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Repositories.Meetings
 {
-    public class MeetingRepository
+    public class MeetingRepository : IMeetingRepository
     {
        
-            private readonly DbContext _context;
+            private readonly ApplicationDbContext _context;
 
-            public MeetingRepository(DbContext context)
+            public MeetingRepository(ApplicationDbContext context)
             {
                 _context = context;
             }
@@ -22,7 +22,10 @@ namespace Dotnet_Project.Repositories.Meetings
 
             public List<Meeting> GetAll()
             {
-                return _context.Set<Meeting>().ToList();
+                return _context.Set<Meeting>()
+                 .Include(m => m.Participant)
+                           .Include(m => m.Moderator)
+                           .ToList();
             }
 
             public Meeting? GetById(int id)
