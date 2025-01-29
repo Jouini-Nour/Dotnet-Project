@@ -1,0 +1,150 @@
+﻿@model Dotnet_Project.Models.Meeting
+
+
+@{
+    ViewData["Title"] = "Meeting";
+    var meetings = ViewData["Meetings"] as List<Dotnet_Project.Models.Meeting>;
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/meetings.css">
+}
+@section Navbar {
+    <nav class="nav-menu">
+                <a href="/employees" class="nav-item">
+                    <img src="~/images/user.svg" />
+                    <span>Employees</span>
+                </a>
+                <a href="/meetings" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meeting" ? "active" : "")">
+                    <img src="~/images/message-text.svg" />
+                    <span>Meetings</span>
+                </a>
+            </nav>
+}
+<div class=" text-white p-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Planned meetings</h2>
+        <button class="btn-primary">Schedule a meeting</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Participant</th>
+                    <th>Moderator</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Subject</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var meeting in meetings) {
+                
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="@meeting.Participant.Image" class="rounded-circle me-2" width="30" height="30" />
+                                <span>@meeting.Participant.Name</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="@meeting.Moderator.Image" class="rounded-circle me-2" width="30" height="30" />
+                                <span>@meeting.Moderator.Name</span>
+                            </div>
+                        </td>
+                        <td>@meeting.Date</td>
+                        <td>@meeting.Time</td>
+                        <td>@meeting.Subject</td>
+                        <td>
+                            <form method="post" asp-action="DeleteConfirmed" asp-route-id="@meeting.Id">
+                                <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                            </form>
+                        </td>
+                    </tr>
+                
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+      <div class="modal-backdrop" style="display: none;">
+
+       <div class="modal-content">
+          <h2>Schedule a meeting</h2>
+         <div class="form">
+               <!-- <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label for="participant">Participant</label>
+                    <input type="number" id="participant" name="ParticipantId" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="Subject" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="moderator">Moderator</label>
+                    <input type="number" id="moderator" name="ModeratorId" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="Date" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="Time" class="form-control" />
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-save">Save</button>
+                    <a href="@Url.Action("Index", "Meeting")" class="btn btn-cancel">Cancel</a>
+                </div>
+                </form>-->
+
+              <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="ParticipantId">Participant</label>
+                    <select asp-for="ParticipantId" asp-items="ViewBag.Employees" class="form-control number">
+                        <option value="">Select Participant</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ModeratorId">Moderator</label>
+                    <select asp-for="ModeratorId" asp-items="ViewBag.Employees" class="form-control number">
+                        <option value="">Select Moderator</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Date">Date</label>
+                    <input asp-for="Date" class="form-control" type="date" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Time">Time</label>
+                    <input asp-for="Time" class="form-control" type="time" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Subject">Subject</label>
+                    <input asp-for="Subject" class="form-control subject" />
+                </div>
+                <div class="modal-actions">
+                <button type="submit" class="btn btn-save">Save</button>
+                <a href="@Url.Action("Index", "Meeting")" class="btn btn-cancel">Cancel</a>
+                </div>
+               </form> 
+
+
+
+
+        </div>
+                    </div>
+        </div>   

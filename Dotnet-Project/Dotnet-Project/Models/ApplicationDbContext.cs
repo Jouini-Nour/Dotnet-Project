@@ -12,11 +12,18 @@
 
         public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Meeting> Meetings { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            modelBuilder.Entity<ProjectTask>()
+                    .ToTable("ProjectTasks");
+            modelBuilder.Entity<Employee>()
+                      .HasMany(e => e.Tasks)
+                      .WithOne(t => t.Employee)
+                      .HasForeignKey(t => t.EmployeeId);
             // Configure relationships and other constraints if necessary
             modelBuilder.Entity<ProjectTask>(entity =>
             {
@@ -32,13 +39,77 @@
                 entity.Property(t => t.CreationDate)
                       .HasDefaultValueSql("GETDATE()");
             });
-           /* modelBuilder.Entity<Employee>().HasData(
-                new Employee { Id=-1,Name= "Unassigned", Department=null,Email=null},
-        new Employee { Id = 1, Name = "John Doe", Department = "IT", Email = "john.doe@example.com" },
-        new Employee { Id = 2, Name = "Jane Smith", Department = "HR", Email = "jane.smith@example.com" },
-        new Employee { Id = 3, Name = "Sam Brown", Department = "Finance", Email = "sam.brown@example.com" }
-    );
 
+
+            modelBuilder.Entity<Meeting>()
+           .HasOne(m => m.Moderator)
+           .WithMany()
+           .HasForeignKey(m => m.ModeratorId)
+           .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Meeting>()
+                .HasOne(m => m.Participant)
+                .WithMany()
+                .HasForeignKey(m => m.ParticipantId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Employee>().HasData(
+               new Employee
+               {
+                   Id = 1,
+                   Name = "John Doe",
+                   Department = "Engineering",
+                   Phone = "23456654",
+                   Email = "johndoe@example.com",
+                   Image = "https://example.com/images/johndoe.jpg"
+               },
+               new Employee
+               {
+                   Id = 2,
+                   Name = "Jane Smith",
+                   Department = "Marketing",
+                   Phone = "23456654",
+                   Email = "janesmith@example.com",
+                   Image = "https://example.com/images/janesmith.jpg"
+               },
+               new Employee
+               {
+                   Id = 3,
+                   Name = "Alice Johnson",
+                   Department = "HR",
+                   Phone = "23456654",
+                   Email = "alicejohnson@example.com",
+                   Image = "https://example.com/images/alicejohnson.jpg"
+               });
+            modelBuilder.Entity<Meeting>().HasData(
+           new Meeting
+           {
+               Id = 1,
+               ParticipantId = 1,  // Referring to Employee with Id 1
+               ModeratorId = 2,    // Referring to Employee with Id 2
+               Date = new DateOnly(2025, 2, 1),  // Example date
+               Time = new TimeOnly(10, 0),       // Example time (10:00 AM)
+               Subject = "Project Kickoff"
+           },
+           new Meeting
+           {
+               Id = 2,
+               ParticipantId = 3,  // Referring to Employee with Id 3
+               ModeratorId = 2,    // Referring to Employee with Id 4
+               Date = new DateOnly(2025, 2, 3),  // Example date
+               Time = new TimeOnly(14, 30),      // Example time (2:30 PM)
+               Subject = "Quarterly Review"
+           },
+           new Meeting
+           {
+               Id = 3,
+               ParticipantId = 2,  // Referring to Employee with Id 2
+               ModeratorId = 1,    // Referring to Employee with Id 1
+               Date = new DateOnly(2025, 2, 5),  // Example date
+               Time = new TimeOnly(9, 15),       // Example time (9:15 AM)
+               Subject = "Marketing Strategy"
+           }
+       );
             // Seed ProjectTasks
             modelBuilder.Entity<ProjectTask>().HasData(
                 new ProjectTask
@@ -80,7 +151,8 @@
                     CreationDate = new DateTime(2024, 12, 31),
                     Description = "Fix the login page bug on the company website."
                 }
-            );*/
+            );
+           
         }
     }
 

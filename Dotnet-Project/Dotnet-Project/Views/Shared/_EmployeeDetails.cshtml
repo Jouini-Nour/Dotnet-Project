@@ -1,11 +1,12 @@
-﻿
+﻿@model Dotnet_Project.Models.Employee;
+
 <div class="profile-card">
     <div class="profile-container">
         <div class="profile-image-container">
-            <img src="/images/avatar.svg" alt="Name" class="profile-image" />
+            <img src="@Model.Image" alt="Name" class="profile-image" />
             <div class="name-title">
-                <h2>Maram ben rhouma</h2>
-                <span class="title">UI/UX designer </span>
+                <h2>@Model.Name</h2>
+                <span class="title">@Model.Department</span>
             </div>
         </div>
         <div class="profile-info">
@@ -15,14 +16,14 @@
                     <img src="/images/email.svg" alt="Email" class="icon" />
                     <div class="contact-details">
                         <span class="label">EMAIL</span>
-                        <span class="value">maram@gmail.com</span>
+                        <span class="value">@Model.Email</span>
                     </div>
                 </div>
                 <div class="contact-item">
                     <img src="/images/phone.svg" alt="Phone" class="icon" />
                     <div class="contact-details">
                         <span class="label">PHONE NUMBER</span>
-                        <span class="value">25678876</span>
+                        <span class="value">@Model.Phone</span>
                     </div>
                 </div>
             </div>

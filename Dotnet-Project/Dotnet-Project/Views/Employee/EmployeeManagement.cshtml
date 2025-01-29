@@ -1,9 +1,16 @@
-﻿@section Styles {
+﻿
+@model Dotnet_Project.Models.Employee; 
+
+@{
+    ViewData["Title"] = "EmployeeManagement";
+}
+
+@section Styles {
     <link rel="stylesheet" href="~/css/Employees.css">
 }
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employees" ? "active" : "")">
+        <a href="/employees" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">
             <img src="~/images/document-text.svg" />
             <span>Project Overview</span>
         </a>
@@ -17,7 +24,7 @@
     <div class="dashboard">
         <div  class="profile">
             <div class="employee-section">
-                <partial name="_EmployeeDetails" />
+                @Html.Partial("_EmployeeDetails", Model)
             </div>
            
                 <div class="stat-card">
@@ -47,7 +54,7 @@
             </div>
         <div class="task-comment" >
             <div class="tasks">
-                <partial name="_TaskList" />
+                 @Html.Partial("_TaskList", Model.Tasks) 
             </div>
             <div class="comments">
                 <div class="comments-section">
@@ -57,7 +64,7 @@
                     </div>
 
                     <h3 class="comment-title">Previous comments</h3>
-                <partial name="_Comments"  />
+                <partial name="_Feedbacks"  />
                 </div>
             </div>
     </div>

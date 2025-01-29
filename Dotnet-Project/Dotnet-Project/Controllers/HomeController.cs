@@ -18,6 +18,7 @@ namespace Dotnet_Project.Controllers
             return View("~/Views/Profile/Index.cshtml");
         }
 
+
         public IActionResult Privacy()
         {
             return View();
