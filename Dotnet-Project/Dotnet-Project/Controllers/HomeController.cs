@@ -21,7 +21,7 @@ namespace Dotnet_Project.Controllers
             model.Post = "Developer";
             
             
-            return View("~/Views/Profile/Index.cshtml",model);
+            return View();
         }
 
 

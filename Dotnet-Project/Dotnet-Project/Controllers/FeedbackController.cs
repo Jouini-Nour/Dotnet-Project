@@ -2,6 +2,7 @@
 using Dotnet_Project.Repositories.Employees;
 using Dotnet_Project.Repositories.Feedbacks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
 {
@@ -22,29 +23,25 @@ namespace Dotnet_Project.Controllers
             return View(feedbacks);
         }
 
-        public IActionResult Create(int receiverId)
-        {
-            var receiver = _employeeRepository.GetEmployeeById(receiverId);
-            if (receiver == null)
-            {
-                return NotFound();
-            }
+       
 
-            var feedback = new Feedback { ReceiverId = receiverId };
-            return View(feedback);
-        }
-
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Feedback feedback)
+        public IActionResult Create([Bind("Description,WriterId,ReceiverId")] Feedback feedback)
         {
-            if (ModelState.IsValid)
-            {
+           
+            
+             if (ModelState.IsValid)
+                {
+                feedback.Date = DateTime.Now;
                 _feedbackRepository.AddFeedback(feedback);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(feedback);
+                return RedirectToAction("EmployeeManagement", "Employee", new { id = feedback.ReceiverId });
+                }            
+
+            return RedirectToAction("EmployeeManagement", "Employee", new { id = feedback.ReceiverId });
         }
+
+
 
         public IActionResult Edit(int id)
         {

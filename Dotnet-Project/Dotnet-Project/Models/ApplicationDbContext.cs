@@ -66,67 +66,72 @@
                 .WithMany(e => e.ReceivedFeedbacks)
                 .HasForeignKey(f => f.ReceiverId)
                 .OnDelete(DeleteBehavior.Restrict);
-
             modelBuilder.Entity<Employee>().HasData(
-               new Employee
-               {
-                   Id = 1,
-                   Name = "John Doe",
-                   Department = "Engineering",
-                   Post = "Developper",
-                   Phone = "23456654",
-                   Email = "johndoe@example.com",
-                   Image = "https://example.com/images/johndoe.jpg"
-               },
-               new Employee
-               {
-                   Id = 2,
-                   Name = "Jane Smith",
-                   Department = "Marketing",
-                   Post = "UI/UX Designer",
-                   Phone = "23456654",
-                   Email = "janesmith@example.com",
-                   Image = "https://example.com/images/janesmith.jpg"
-               },
-               new Employee
-               {
-                   Id = 3,
-                   Name = "Alice Johnson",
-                   Department = "HR",
-                   Post = "UI/UX Designer",
-                   Phone = "23456654",
-                   Email = "alicejohnson@example.com",
-                   Image = "https://example.com/images/alicejohnson.jpg"
-               });
+              new Employee
+              {
+                  Id = 1,
+                  Name = "John Doe",
+                  Department = "Engineering",
+                  Post = "Developper",
+                  Phone = "23456654",
+                  Email = "johndoe@example.com",
+                  Image = "https://example.com/images/johndoe.jpg",
+                  Gender = Gender.Male,
+                  Evaluation = Evaluation.Excellent,
+              },
+              new Employee
+              {
+                  Id = 2,
+                  Name = "Jane Smith",
+                  Department = "Marketing",
+                  Post = "UI/UX Designer",
+                  Phone = "23456654",
+                  Email = "janesmith@example.com",
+                  Image = "https://example.com/images/janesmith.jpg",
+                  Gender = Gender.Male,
+                  Evaluation = Evaluation.Excellent,
+              },
+              new Employee
+              {
+                  Id = 3,
+                  Name = "Alice Johnson",
+                  Department = "HR",
+                  Post = "UI/UX Designer",
+                  Phone = "23456654",
+                  Email = "alicejohnson@example.com",
+                  Image = "https://example.com/images/alicejohnson.jpg",
+                  Gender = Gender.Female,
+                  Evaluation = Evaluation.Excellent,
+              });
             modelBuilder.Entity<Meeting>().HasData(
-           new Meeting
-           {
-               Id = 1,
-               ParticipantId = 1,  // Referring to Employee with Id 1
-               ModeratorId = 2,    // Referring to Employee with Id 2
-               Date = new DateOnly(2025, 2, 1),  // Example date
-               Time = new TimeOnly(10, 0),       // Example time (10:00 AM)
-               Subject = "Project Kickoff"
-           },
-           new Meeting
-           {
-               Id = 2,
-               ParticipantId = 3,  // Referring to Employee with Id 3
-               ModeratorId = 2,    // Referring to Employee with Id 4
-               Date = new DateOnly(2025, 2, 3),  // Example date
-               Time = new TimeOnly(14, 30),      // Example time (2:30 PM)
-               Subject = "Quarterly Review"
-           },
-           new Meeting
-           {
-               Id = 3,
-               ParticipantId = 2,  // Referring to Employee with Id 2
-               ModeratorId = 1,    // Referring to Employee with Id 1
-               Date = new DateOnly(2025, 2, 5),  // Example date
-               Time = new TimeOnly(9, 15),       // Example time (9:15 AM)
-               Subject = "Marketing Strategy"
-           }
-       );
+                  new Meeting
+                  {
+                      Id = 1,
+                      ParticipantId = 1,  
+                      ModeratorId = 2,    
+                      Date = new DateOnly(2025, 2, 1),  
+                      Time = new TimeOnly(10, 0),       
+                      Subject = "Project Kickoff"
+                  },
+                  new Meeting
+                  {
+                      Id = 2,
+                      ParticipantId = 3,  // Referring to Employee with Id 3
+                      ModeratorId = 2,    // Referring to Employee with Id 4
+                      Date = new DateOnly(2025, 2, 3),  // Example date
+                      Time = new TimeOnly(14, 30),      // Example time (2:30 PM)
+                      Subject = "Quarterly Review"
+                  },
+                  new Meeting
+                  {
+                      Id = 3,
+                      ParticipantId = 2,  // Referring to Employee with Id 2
+                      ModeratorId = 1,    // Referring to Employee with Id 1
+                      Date = new DateOnly(2025, 2, 5),  // Example date
+                      Time = new TimeOnly(9, 15),       // Example time (9:15 AM)
+                      Subject = "Marketing Strategy"
+                  }
+                );
             // Seed ProjectTasks
             modelBuilder.Entity<ProjectTask>().HasData(
                 new ProjectTask
@@ -169,8 +174,41 @@
                     Description = "Fix the login page bug on the company website."
                 }
             );
-           
+            modelBuilder.Entity<Feedback>().HasData(
+    new Feedback
+    {
+        Id = 1,
+        Date = DateTime.UtcNow,
+        Description = "Great job on the last project!",
+        WriterId = 1,  // John Doe
+        ReceiverId = 2  // Jane Smith
+    },
+    new Feedback
+    {
+        Id = 2,
+        Date = DateTime.UtcNow,
+        Description = "Excellent design skills!",
+        WriterId = 2,  // Jane Smith
+        ReceiverId = 3  // Alice Johnson
+    },
+    new Feedback
+    {
+        Id = 3,
+        Date = DateTime.UtcNow,
+        Description = "Thanks for the HR support!",
+        WriterId = 3,  // Alice Johnson
+        ReceiverId = 1  // John Doe
+    }
+);
+
+
+
+
+
+
+
         }
+
     }
 
 }

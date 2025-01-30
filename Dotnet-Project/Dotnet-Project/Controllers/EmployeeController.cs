@@ -1,6 +1,7 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Employees;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dotnet_Project.Controllers
 {
@@ -8,9 +9,11 @@ namespace Dotnet_Project.Controllers
     {
         private readonly IEmployeeRepository _employeeRepository;
 
+
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
+
         }
 
         public IActionResult Index()
@@ -96,8 +99,7 @@ namespace Dotnet_Project.Controllers
             {
                 return NotFound();
             }
-
-            // Passer l'employé au modèle de la partial view
+            ViewBag.Employees = _employeeRepository.GetAllEmployees().ToList();
             return View("EmployeeManagement", employee);
         }
     }

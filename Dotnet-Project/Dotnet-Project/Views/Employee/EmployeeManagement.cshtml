@@ -58,15 +58,35 @@
             </div>
             <div class="comments">
                 <div class="comments-section">
-                    <div class="comment-input">
-                        <textarea placeholder="your comment here..."></textarea>
-                        <button class="add-button">Add</button>
-                    </div>
+
+
+                    <form asp-action="Create" asp-controller="Feedback" method="post">
+                        <input type="hidden" name="ReceiverId" value="@Model.Id" />
+
+                        <div class="comment-input">
+                            <select name="WriterId" id="WriterId" label="Manager" required>
+                                @foreach (var employee in ViewBag.Employees)
+                                {
+                                    <option value="@employee.Id">@employee.Name</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="comment-input">
+                            <textarea name="Description" placeholder="Your comment here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="add-button">Add</button>
+                    </form>
+
+
 
                     <h3 class="comment-title">Previous comments</h3>
-                <partial name="_Feedbacks"  />
+                    @Html.Partial("_Feedbacks", Model.ReceivedFeedbacks)
                 </div>
             </div>
     </div>
     </div>
 </div>
+
+
