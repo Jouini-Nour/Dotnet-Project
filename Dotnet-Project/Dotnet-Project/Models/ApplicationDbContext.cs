@@ -80,6 +80,11 @@
                },
                new Employee
                {
+                   Id = -1,
+                   Name = "Unassigned",
+               },
+               new Employee
+               {
                    Id = 2,
                    Name = "Jane Smith",
                    Department = "Marketing",
@@ -143,7 +148,6 @@
                 {
                     TaskId = 2,
                     Title = "Update employee records",
-                    EmployeeId = 2,
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.NotStarted,
                     CreationDate = new DateTime(2024, 12, 31),
