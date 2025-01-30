@@ -12,5 +12,14 @@
         public string? Phone { get; set; }
         public ICollection<ProjectTask> Tasks { get; set; } = new List<ProjectTask>();
 
+        // Feedbacks written by this employee
+        public ICollection<Feedback> WrittenFeedbacks { get; set; } = new List<Feedback>();
+
+        // Feedbacks received by this employee
+        public ICollection<Feedback> ReceivedFeedbacks { get; set; } = new List<Feedback>();
+
+        public ICollection<Meeting> Meetings { get; set; } = new List<Meeting>();
+
+
     }
 }
