@@ -1,4 +1,6 @@
-﻿<div class="dashboard-grid">
+﻿@model Dotnet_Project.Models.Employee;
+
+<div class="dashboard-grid">
     <!-- Left Column - Statistics -->
     <div class="stats-column">
         <div class="stats-grid">
@@ -8,7 +10,7 @@
                     <span>Hours worked</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">10</div>
+                    <div class="stat-value">@Model.HoursWorked</div>
                     <div class="stat-unit">Hours</div>
                 </div>
                 <div class="stat-period">for this month</div>
@@ -20,7 +22,7 @@
                     <span>Absence days</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">20</div>
+                    <div class="stat-value">@Model.AbsenceDays</div>
                     <div class="stat-unit">days</div>
                 </div>
                 <div class="stat-period">for this year</div>
@@ -32,7 +34,7 @@
                     <span>Overdue tasks</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">@Model.OverdueTasks</div>
                     <div class="stat-unit">Tasks</div>
                 </div>
                 <div class="stat-period">for this year</div>
@@ -44,7 +46,7 @@
                     <span>Tasks completed</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">10</div>
+                    <div class="stat-value">@Model.CompletedTasks</div>
                     <div class="stat-unit">Tasks</div>
                 </div>
                 <div class="stat-period">for this year</div>
@@ -56,11 +58,13 @@
                     <span>Overall Evaluation</span>
                 </div>
                 <div class="stat-period">for this year</div>
-                <select class="evaluation-select">
+                <!-- <select class="evaluation-select">
                     <option>Average</option>
                     <option>Good</option>
                     <option>Excellent</option>
-                </select>
+                </select> -->
+                <div class="stat-value">@Model.Evaluation</div>
+
             </div>
         </div>
     </div>

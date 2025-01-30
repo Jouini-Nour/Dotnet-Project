@@ -23,6 +23,13 @@
         public string? Email { get; set; }
         public string? Image { get; set; }
         public string? Phone { get; set; }
+        public int? OverdueTasks { get; set; }
+        public int? CompletedTasks { get; set; }
+        public int? AbsenceDays { get; set; }
+        public int? HoursWorked { get; set; }
+
+
+
 
         public Gender Gender { get; set; }
         public Evaluation Evaluation { get; set; }

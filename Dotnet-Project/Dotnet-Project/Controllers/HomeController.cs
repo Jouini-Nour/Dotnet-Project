@@ -15,13 +15,26 @@ namespace Dotnet_Project.Controllers
 
         public IActionResult Index()
         {
-            var model=new Employee();
-            model.Name = "John";
-            model.Department = "IT";
-            model.Post = "Developer";
+            var model =
+            new Employee
+            {
+                Id = 1,
+                Name = "John Doe",
+                Department = "Engineering",
+                Post = "Developper",
+                Phone = "23456654",
+                Email = "johndoe@example.com",
+                Image = "https://example.com/images/johndoe.jpg",
+                Gender = Gender.Male,
+                Evaluation = Evaluation.Excellent,
+                OverdueTasks = 4,
+                CompletedTasks = 5,
+                AbsenceDays = 20,
+                HoursWorked = 20,
+            };
             
             
-            return View("~/Views/Profile/Index.cshtml",model);
+            return View("Views/Profile/Index.cshtml", model);
         }
 
 

@@ -1,20 +1,13 @@
-﻿
+﻿@model ICollection<Feedback>
+
     <div class="comments-list">
-        
+    @foreach (var item in Model){
+
             <div class="comment">
-            <div class="comment-date">05/12/2018</div>
-            <div class="comment-content">Content </div>
-            <div class="comment-author">  by Author </div>
+            <div class="comment-date">@item.Date</div>
+            <div class="comment-content">@item.Description </div>
+            <div class="comment-author">  by @item.Writer.Name</div>
             </div>
-        <div class="comment">
-            <div class="comment-date">05/12/2018</div>
-            <div class="comment-content">Content </div>
-            <div class="comment-author">  by Author </div>
-        </div>
-        <div class="comment">
-            <div class="comment-date">05/12/2018</div>
-            <div class="comment-content">Content </div>
-            <div class="comment-author">  by Author </div>
-        </div>
         
+    }
     </div>
