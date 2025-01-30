@@ -13,6 +13,8 @@
         public DbSet<ProjectTask> ProjectTasks { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -51,6 +53,18 @@
                 .HasOne(m => m.Participant)
                 .WithMany()
                 .HasForeignKey(m => m.ParticipantId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Feedback>()
+               .HasOne(f => f.Writer)
+               .WithMany(e => e.WrittenFeedbacks)
+               .HasForeignKey(f => f.WriterId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Feedback>()
+                .HasOne(f => f.Receiver)
+                .WithMany(e => e.ReceivedFeedbacks)
+                .HasForeignKey(f => f.ReceiverId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Employee>().HasData(

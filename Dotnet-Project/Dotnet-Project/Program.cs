@@ -4,6 +4,7 @@ using Dotnet_Project.Repositories.Employees;
 using Microsoft.EntityFrameworkCore;
 using Dotnet_Project.Repositories;
 using Dotnet_Project.Services;
+using Dotnet_Project.Repositories.Feedbacks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddMvc();
 builder.Services.AddScoped<IProjectTaskRepository, ProjectTaskRepository>();
 builder.Services.AddScoped<IProjectTaskService, ProjectTaskService>();
+builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+
 
 
 var app = builder.Build();
