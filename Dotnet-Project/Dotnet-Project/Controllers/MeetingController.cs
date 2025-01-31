@@ -38,23 +38,29 @@ namespace Dotnet_Project.Controllers
             }
             return View(meeting);
         }
-        
+
 
         [HttpPost]
-        public IActionResult Create(Meeting meeting)
+        public IActionResult Create(int ParticipantId, string Subject, int ModeratorId, DateOnly Date, TimeOnly Time)
         {
-            
+            var meet = new Meeting();
+            meet.Subject = Subject;
+            meet.Date = Date;
+            meet.Time = Time;
+            meet.ModeratorId = ModeratorId;
+            meet.ParticipantId = ParticipantId;
 
             if (ModelState.IsValid)
             {
-                _repository.Add(meeting);
+                Console.WriteLine("hereé");
+                _repository.Add(meet);
                 return RedirectToAction("Index");
             }
 
             ViewBag.Employees = new SelectList(_employeeRepository.GetAllEmployees(), "Id", "Name");
             return RedirectToAction("Index");
 
-            
+
         }
     
 

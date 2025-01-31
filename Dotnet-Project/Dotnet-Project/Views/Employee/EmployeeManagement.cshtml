@@ -60,9 +60,9 @@
                 <div class="comments-section">
 
 
+                   
                     <form asp-action="Create" asp-controller="Feedback" method="post">
-                        <input type="hidden" name="ReceiverId" value="@Model.Id" />
-
+                        <input type="hidden" name="ReceiverId" id="ReceiverId" value="@Model.Id" />
                         <div class="comment-input">
                             <select name="WriterId" id="WriterId" label="Manager" required>
                                 @foreach (var employee in ViewBag.Employees)
@@ -71,11 +71,9 @@
                                 }
                             </select>
                         </div>
-
                         <div class="comment-input">
-                            <textarea name="Description" placeholder="Your comment here..." required></textarea>
+                            <textarea name="Description" id="Description" placeholder="Your comment here..." required></textarea>
                         </div>
-
                         <button type="submit" class="add-button">Add</button>
                     </form>
 
