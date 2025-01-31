@@ -33,6 +33,8 @@
 
         public Gender Gender { get; set; }
         public Evaluation Evaluation { get; set; }
+        public Project Project { get; set; }
+        public int? ProjectId { get; set; }
 
         public ICollection<ProjectTask> Tasks { get; set; } = new List<ProjectTask>();
 

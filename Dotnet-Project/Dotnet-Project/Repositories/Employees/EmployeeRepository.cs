@@ -50,5 +50,19 @@ namespace Dotnet_Project.Repositories.Employees
                 _context.SaveChanges();
             }
         }
+        public int GetTotalEmployees()
+        {
+            return _context.Employees.Count();
+        }
+
+        public int GetMaleEmployees()
+        {
+            return _context.Employees.Count(e => e.Gender == Gender.Male);
+        }
+
+        public int GetFemaleEmployees()
+        {
+            return _context.Employees.Count(e => e.Gender == Gender.Female);
+        }
     }
 }

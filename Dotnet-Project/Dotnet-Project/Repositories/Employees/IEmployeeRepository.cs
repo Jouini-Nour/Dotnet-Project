@@ -9,5 +9,8 @@ namespace Dotnet_Project.Repositories.Employees
         void AddEmployee(Employee employee); 
         void UpdateEmployee(Employee employee); 
         void DeleteEmployee(int id);
+        int GetTotalEmployees();
+        int GetMaleEmployees();
+        int GetFemaleEmployees();
     }
 }

@@ -19,6 +19,13 @@ namespace Dotnet_Project.Controllers
         public IActionResult Index()
         {
             var employees = _employeeRepository.GetAllEmployees();
+            var totalEmployees = _employeeRepository.GetTotalEmployees();
+            var maleEmployees = _employeeRepository.GetMaleEmployees();
+            var femaleEmployees = _employeeRepository.GetFemaleEmployees();
+            ViewData["TotalEmployees"] = totalEmployees;
+            ViewData["MaleEmployees"] = maleEmployees;
+            ViewData["FemaleEmployees"] = femaleEmployees;
+
             return View(employees);
         }
 
@@ -102,6 +109,17 @@ namespace Dotnet_Project.Controllers
             ViewBag.Employees = _employeeRepository.GetAllEmployees().ToList();
             return View("EmployeeManagement", employee);
         }
+        public IActionResult EmployeeProductivity(int id)
+        {
+            var employee = _employeeRepository.GetEmployeeById(id);  // Récupérer l'employé par ID
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            ViewBag.Employees = _employeeRepository.GetAllEmployees().ToList();
+            return View("Views/Profile/Index.cshtml", employee);
+        }
+
     }
 }
 

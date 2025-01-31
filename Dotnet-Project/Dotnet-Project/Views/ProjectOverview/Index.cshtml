@@ -1,9 +1,12 @@
 ﻿@model Dotnet_Project.Models.Project
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/ProjectOverview.css">
+    <link rel="stylesheet" href="~/css/Project.css">
 }
-
+@{
+    ViewData["ActionName"] = "EmployeeManagement";
+    ViewData["ControllerName"] = "Employee";
+}
 @section Navbar {
     <nav class="nav-menu">
         <a href="@Url.Action("Index", "Home")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
@@ -20,7 +23,7 @@
 <div class="dashboard-container">
     <div class="dashboard">
         <div class="project-overview">
-            <h2>details</h2>
+            <h2> Project details</h2>
             <div class="details-grid">
                 <div class="details-section">
                     
@@ -33,7 +36,7 @@
                     
                 </div>
             </div>
-            <h2>Project team members </h2>
+            <h2>Project team members</h2>
             <div class="team-section">
                 @Html.Partial("_Team", Model.TeamMembers)
                 
