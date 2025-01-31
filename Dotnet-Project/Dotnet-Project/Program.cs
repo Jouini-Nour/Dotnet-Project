@@ -1,20 +1,17 @@
+
 using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Meetings;
 using Dotnet_Project.Repositories.Employees;
 using Microsoft.EntityFrameworkCore;
-using Dotnet_Project.Repositories;
 using Dotnet_Project.Services;
 using Dotnet_Project.Repositories.Feedbacks;
+using Dotnet_Project.Repositories.ProjectTasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-/*var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 2))));*/
 
 
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();

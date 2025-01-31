@@ -66,6 +66,8 @@
                 .WithMany(e => e.ReceivedFeedbacks)
                 .HasForeignKey(f => f.ReceiverId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
             modelBuilder.Entity<Employee>().HasData(
               new Employee
               {
@@ -78,6 +80,10 @@
                   Image = "https://example.com/images/johndoe.jpg",
                   Gender = Gender.Male,
                   Evaluation = Evaluation.Excellent,
+                  OverdueTasks = 4,
+                  CompletedTasks = 5,
+                  AbsenceDays = 20,
+                  HoursWorked = 20,
               },
               new Employee
               {
@@ -90,6 +96,10 @@
                   Image = "https://example.com/images/janesmith.jpg",
                   Gender = Gender.Male,
                   Evaluation = Evaluation.Excellent,
+                  OverdueTasks = 4,
+                  CompletedTasks = 5,
+                  AbsenceDays = 20,
+                  HoursWorked = 20,
               },
               new Employee
               {
@@ -102,6 +112,10 @@
                   Image = "https://example.com/images/alicejohnson.jpg",
                   Gender = Gender.Female,
                   Evaluation = Evaluation.Excellent,
+                  OverdueTasks= 4,
+                  CompletedTasks= 5,
+                  AbsenceDays= 20,
+                  HoursWorked= 20,
               });
             modelBuilder.Entity<Meeting>().HasData(
                   new Meeting
@@ -116,10 +130,10 @@
                   new Meeting
                   {
                       Id = 2,
-                      ParticipantId = 3,  // Referring to Employee with Id 3
-                      ModeratorId = 2,    // Referring to Employee with Id 4
-                      Date = new DateOnly(2025, 2, 3),  // Example date
-                      Time = new TimeOnly(14, 30),      // Example time (2:30 PM)
+                      ParticipantId = 3,  
+                      ModeratorId = 2,   
+                      Date = new DateOnly(2025, 2, 3),  
+                      Time = new TimeOnly(14, 30),      
                       Subject = "Quarterly Review"
                   },
                   new Meeting
@@ -148,7 +162,6 @@
                 {
                     TaskId = 2,
                     Title = "Update employee records",
-                    EmployeeId = 2,
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.NotStarted,
                     CreationDate = new DateTime(2024, 12, 31),
@@ -174,32 +187,7 @@
                     Description = "Fix the login page bug on the company website."
                 }
             );
-            modelBuilder.Entity<Feedback>().HasData(
-    new Feedback
-    {
-        Id = 1,
-        Date = DateTime.UtcNow,
-        Description = "Great job on the last project!",
-        WriterId = 1,  // John Doe
-        ReceiverId = 2  // Jane Smith
-    },
-    new Feedback
-    {
-        Id = 2,
-        Date = DateTime.UtcNow,
-        Description = "Excellent design skills!",
-        WriterId = 2,  // Jane Smith
-        ReceiverId = 3  // Alice Johnson
-    },
-    new Feedback
-    {
-        Id = 3,
-        Date = DateTime.UtcNow,
-        Description = "Thanks for the HR support!",
-        WriterId = 3,  // Alice Johnson
-        ReceiverId = 1  // John Doe
-    }
-);
+            
 
 
 

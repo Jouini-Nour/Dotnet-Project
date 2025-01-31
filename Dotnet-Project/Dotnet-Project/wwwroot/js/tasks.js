@@ -1,43 +1,4 @@
-﻿// Modal handling
-/*const modal = document.querySelector('.modal-backdrop');
-
-// Add click event listeners to all task cards
-document.querySelectorAll('.task-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-        // Prevent clicking options button from opening modal
-        if (e.target.classList.contains('options') || e.target.closest('.options')) {
-            e.stopPropagation();
-            return;
-        }
-
-        // Show modal
-        modal.style.display = 'flex';
-    });
-});
-
-// Close modal when clicking outside
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
-    }
-});
-
-// Handle button clicks
-document.querySelector('.btn-complete').addEventListener('click', () => {
-    console.log('Mark as completed clicked');
-    // Add your completion logic here
-});
-
-document.querySelector('.btn-edit').addEventListener('click', () => {
-    console.log('Edit clicked');
-    // Add your edit logic here
-});
-
-document.querySelector('.btn-delete').addEventListener('click', () => {
-    console.log('Delete clicked');
-    // Add your delete logic here
-});*/
-const taskModal = document.getElementById('taskModal');
+﻿const taskModal = document.getElementById('taskModal');
 const addTaskModal = document.getElementById('addTaskModal');
 const editTaskModal = document.getElementById('editTaskModal');
 const addTaskForm = document.getElementById('addTaskForm');

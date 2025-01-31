@@ -1,4 +1,5 @@
-﻿@model Dotnet_Project.Models.Employee
+﻿@model Dotnet_Project.Models.Employee;
+
 
 @section Styles {
     <link rel="stylesheet" href="~/css/Profile.css">
@@ -22,7 +23,11 @@
         <div class="profile-overview">
             <h2>Employee Profile</h2>
             <div class="profile-details-grid">
-                @Html.Partial("_EmployeeDetails", Model)                
+
+                
+                @Html.Partial("_EmployeeDetails", Model)
+
+
             </div>
         </div>
 
@@ -31,6 +36,7 @@
             <div class="stats-section">
                 <h2>Statistics Overview</h2>
                 @Html.Partial("_stats-grid", Model)
+
                 
             </div>
 
@@ -38,8 +44,6 @@
                 <h2>Manager's Feedback</h2>
                 <div class="feedback-container">
                     @Html.Partial("_Feedbacks", Model.ReceivedFeedbacks)
-
-               
                 </div>
             </div>
         </div>

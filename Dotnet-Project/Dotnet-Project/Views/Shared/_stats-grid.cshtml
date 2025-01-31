@@ -1,6 +1,12 @@
-﻿@model Dotnet_Project.Models.Employee
+@model Dotnet_Project.Models.Employee
 
 <div class="dashboard-grid">
+
+
+
+<div class="dashboard-grid">
+    <!-- Left Column - Statistics -->
+
     <div class="stats-column">
         <div class="stats-grid">
             <!-- Hours Worked -->
@@ -10,7 +16,11 @@
                     <span>Hours Worked</span>
                 </div>
                 <div class="stat-info">
+
                     <div class="stat-value">N/A</div> <!-- Placeholder since HoursWorked is not defined -->
+
+                    <div class="stat-value">@Model.HoursWorked</div>
+
                     <div class="stat-unit">Hours</div>
                 </div>
                 <div class="stat-period">for this month</div>
@@ -23,8 +33,13 @@
                     <span>Absence Days</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">N/A</div> <!-- Placeholder since IsAbsent is not defined -->
+
+                   <div class="stat-value">N/A</div> <!-- Placeholder since IsAbsent is not defined -->
                     <div class="stat-unit">Days</div>
+
+                    <div class="stat-value">@Model.AbsenceDays</div>
+                    <div class="stat-unit">days</div>
+
                 </div>
                 <div class="stat-period">for this year</div>
             </div>
@@ -36,7 +51,11 @@
                     <span>Overdue Tasks</span>
                 </div>
                 <div class="stat-info">
+
                     <div class="stat-value">@Model.Tasks.Count(t => t.dueDate < DateTime.Now && t.Status != Status.Completed)</div>
+
+                    <div class="stat-value">@Model.OverdueTasks</div>
+
                     <div class="stat-unit">Tasks</div>
                 </div>
                 <div class="stat-period">for this year</div>
@@ -49,7 +68,10 @@
                     <span>Tasks Completed</span>
                 </div>
                 <div class="stat-info">
-                    <div class="stat-value">@Model.Tasks.Count(t => t.Status == Status.Completed)</div>
+                   <div class="stat-value">@Model.Tasks.Count(t => t.Status == Status.Completed)</div>
+
+                    <div class="stat-value">@Model.CompletedTasks</div>
+
                     <div class="stat-unit">Tasks</div>
                 </div>
                 <div class="stat-period">for this year</div>
@@ -62,12 +84,22 @@
                     <span>Overall Evaluation</span>
                 </div>
                 <div class="stat-period">for this year</div>
+
                 <select class="evaluation-select">
                     @foreach (var eval in Enum.GetValues(typeof(Dotnet_Project.Models.Evaluation)))
                     {
                         <option value="@eval" selected="@(eval.Equals(Model.Evaluation) ? "selected" : null)">@eval</option>
                     }
                 </select>
+
+                <!-- <select class="evaluation-select">
+                    <option>Average</option>
+                    <option>Good</option>
+                    <option>Excellent</option>
+                </select> -->
+                <div class="stat-value">@Model.Evaluation</div>
+
+
             </div>
         </div>
     </div>

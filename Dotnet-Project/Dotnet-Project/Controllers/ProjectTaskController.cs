@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Dotnet_Project.Models;
-using Dotnet_Project.Repositories;
+using Dotnet_Project.Repositories.ProjectTasks;
+using Dotnet_Project.Repositories.Employees;
 using Dotnet_Project.Services;
 using Dotnet_Project.Views.Home;
 using Microsoft.AspNetCore.Mvc;
@@ -12,13 +13,13 @@ namespace Dotnet_Project.Controllers
     {
         private readonly IProjectTaskService _taskService;
         private readonly IProjectTaskRepository _taskRepository;
-        private readonly ApplicationDbContext _context;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public ProjectTaskController(IProjectTaskService taskService, IProjectTaskRepository taskRepository, ApplicationDbContext context)
+        public ProjectTaskController(IProjectTaskService taskService, IProjectTaskRepository taskRepository, IEmployeeRepository employeeRepository)
         {
             _taskService = taskService;
             _taskRepository = taskRepository;
-            _context = context;
+            _employeeRepository = employeeRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -32,7 +33,7 @@ namespace Dotnet_Project.Controllers
                 UnassignedTasks = unassignedTasks ?? Enumerable.Empty<ProjectTask>(),
                 InProgressTasks = inProgressTasks ?? Enumerable.Empty<ProjectTask>(),
                 CompletedTasks = completedTasks ?? Enumerable.Empty<ProjectTask>(),
-                EmployeeList = await _taskService.GetEmployees(),
+                EmployeeList = _employeeRepository.GetAllEmployees(),
                 NewTask = new ProjectTask()
             };
 
@@ -49,9 +50,9 @@ namespace Dotnet_Project.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    
 
-                    model.EmployeeList = await _taskService.GetEmployees();
+
+                    model.EmployeeList = _employeeRepository.GetAllEmployees();
                     return View("Index", model);
                 }
                
@@ -101,8 +102,8 @@ namespace Dotnet_Project.Controllers
         {
             try
             {
-                var task = await _context.ProjectTasks.FindAsync(id);
-
+                //var task = await _context.ProjectTasks.FindAsync(id);
+                var task = await _taskRepository.GetProjectTaskByIdAsync(id);
                 if (task == null)
                 {
                     return NotFound();
@@ -113,9 +114,9 @@ namespace Dotnet_Project.Controllers
                 task.EmployeeId = employeeId; // Can be null
                 task.dueDate = dueDate;
                 task.Status = task.EmployeeId == -1 ? Status.NotStarted : Status.InProgress;
-                _context.Update(task);
-                await _context.SaveChangesAsync();
-
+                //_context.Update(task);
+                //await _context.SaveChangesAsync();
+                _taskRepository.UpdateProjectTaskAsync(task);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -131,16 +132,16 @@ namespace Dotnet_Project.Controllers
         {
             try
             {
-                var task = await _context.ProjectTasks.FindAsync(id);
+                var task = await _taskRepository.GetProjectTaskByIdAsync(id);
                 if (task == null)
                 {
                     return NotFound();
                 }
 
                 task.Status = Status.Completed;
-                _context.Update(task);
-                await _context.SaveChangesAsync();
-
+                //_context.Update(task);
+                //await _context.SaveChangesAsync();
+                _taskRepository.UpdateProjectTaskAsync(task);
                 return Ok();
             }
             catch (Exception ex)
@@ -155,15 +156,15 @@ namespace Dotnet_Project.Controllers
         {
             try
             {
-                var task = await _context.ProjectTasks.FindAsync(id);
+                var task = await _taskRepository.GetProjectTaskByIdAsync(id);
                 if (task == null)
                 {
                     return NotFound();
                 }
 
-                _context.ProjectTasks.Remove(task);
-                await _context.SaveChangesAsync();
-
+                //_context.ProjectTasks.Remove(task);
+                //await _context.SaveChangesAsync();
+                _taskRepository.DeleteProjectTaskAsync(id);
                 return Ok();
             }
             catch (Exception ex)

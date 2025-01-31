@@ -4,6 +4,18 @@
 @section Styles {
     <link rel="stylesheet" href="~/css/tasks.css">
 }
+@section Navbar {
+    <nav class="nav-menu">
+        <a href="@Url.Action("Index", "ProjectOverview")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectOverview" ? "active" : "")">
+            <img src="~/images/user.svg" />
+            <span>Project Overview</span>
+        </a>
+        <a href="@Url.Action("Index", "ProjectTask")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectTask" ? "active" : "")">
+            <img src="~/images/message-text.svg" />
+            <span>Project Tasks</span>
+        </a>
+    </nav>
+}
 <div class="board">
     <div class="column">
         <div class="column-header">
@@ -165,7 +177,7 @@
             </div>
 
             <div class="modal-actions">
-                <button type="button" class="btn btn-cancel">Cancel</button>
+                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancel</button>
                 <button type="submit" class="btn btn-create">Create</button>
             </div>
         </form>
@@ -218,6 +230,29 @@
 @section Scripts {
     <script src="~/js/tasks.js"></script>
     <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const addTaskModal = document.getElementById("addTaskModal");
+            const cancelButton = document.querySelector("#addTaskModal .btn-cancel");
+
+            if (cancelButton && addTaskModal) {
+                cancelButton.addEventListener("click", function () {
+                    addTaskModal.style.display = "none"; // Hide the modal
+                });
+            }
+
+            // Optional: Show modal when needed
+            function openAddTaskModal() {
+                addTaskModal.style.display = "block";
+            }
+
+            // Optional: Close modal when clicking outside
+            addTaskModal.addEventListener("click", function (event) {
+                if (event.target === addTaskModal) {
+                    addTaskModal.style.display = "none";
+                }
+            });
+        });
+
         // Drag and drop functionality
         document.addEventListener('DOMContentLoaded', function () {
             const taskCards = document.querySelectorAll('.task-card');

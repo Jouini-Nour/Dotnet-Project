@@ -1,6 +1,6 @@
 ﻿using Dotnet_Project.Models;
 
-namespace Dotnet_Project.Repositories
+namespace Dotnet_Project.Repositories.ProjectTasks
 {
     public interface IProjectTaskRepository
     {
