@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Dotnet_Project.Models;
-namespace Dotnet_Project.Repositories
+namespace Dotnet_Project.Repositories.ProjectTasks
 {
     public class ProjectTaskRepository : IProjectTaskRepository
     {
@@ -18,7 +18,7 @@ namespace Dotnet_Project.Repositories
 
         public async Task<ProjectTask> GetProjectTaskByIdAsync(int id)
         {
-            return await _context.ProjectTasks.Include(p=>p.Employee).FirstOrDefaultAsync(pt => pt.TaskId == id);
+            return await _context.ProjectTasks.Include(p => p.Employee).FirstOrDefaultAsync(pt => pt.TaskId == id);
         }
 
         public async Task<ProjectTask> AddProjectTaskAsync(ProjectTask projectTask)
