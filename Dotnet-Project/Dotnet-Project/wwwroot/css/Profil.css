@@ -1,0 +1,266 @@
+﻿
+.dashboard-container {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.profile-card {
+    background-color: #242424;
+    border-radius: 1rem;
+    padding: 2rem;
+    padding-left:280px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center; 
+}
+
+.profile-image-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name-title {
+    display: flex;
+    flex-direction: column;
+}
+.colored-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, #FF6B6B, #556FFF);
+    border-radius: 8px;
+    padding: 6px;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.profile-overview {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+.stats-section {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 50px;
+}
+
+.title {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.contact-info {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #9ca3af;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.value {
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+
+.stats-feedback-container {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; 
+    width: 100%;
+}
+
+
+.stats-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stat-card {
+    background-color: #242424;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.colored-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.stat-unit {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.stat-period {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+
+.evaluation-card {
+    width: 100%;
+}
+
+.evaluation-select {
+    width: 100%;
+    background-color: #333333;
+    border: none;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+.feedback-section {
+    flex: 1;
+    max-width: 100%;
+}
+
+.feedback-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    border-left-color:darkgrey;
+}
+
+.comment {
+    background-color: #242424;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    width:100%;
+}
+
+.comment-date {
+    color: #ffffff;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-content {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+
+@media (max-width: 1200px) {
+    .stats-feedback-container {
+        flex-direction: column;
+    }
+    
+    .stats-section,
+    .feedback-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-info {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .stat-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}

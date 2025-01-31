@@ -3,7 +3,7 @@
     // ApplicationDbContext
     using Microsoft.EntityFrameworkCore;
     using Dotnet_Project.Models;
-    using Dotnet_Project.Migrations;
+  // using Dotnet_Project.Migrations;
     using static System.Net.Mime.MediaTypeNames;
 
     public class ApplicationDbContext : DbContext

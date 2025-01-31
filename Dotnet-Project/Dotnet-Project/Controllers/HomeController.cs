@@ -18,7 +18,7 @@ namespace Dotnet_Project.Controllers
         }
         public IActionResult Index()
         {
-            /*// Create a new Employee object (John Doe)
+            
             var johnDoe = new Employee
             {
                 Post = "Developper",
@@ -100,15 +100,15 @@ namespace Dotnet_Project.Controllers
                 ReceiverId = 1 // Feedback for John Doe
             }
         }
-            };*/
-            var project= _context.Projects
+            };
+            /*var project= _context.Projects
                                    .Include(e => e.TeamMembers)
                                    .Include(e => e.Tasks)
                                    .Include(e => e.Description)
                                    .FirstOrDefault();
-
-            // Pass the model to the view
-            return View("~/Views/ProjectOverview/Index.cshtml", project);
+            */
+            
+            return View("~/Views/Profile/Index.cshtml", model);
         }
         public IActionResult test()
         {
