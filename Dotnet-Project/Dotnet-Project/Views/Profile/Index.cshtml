@@ -17,29 +17,26 @@
         </a>
     </nav>
 }
+
+
 <div class="dashboard-container">
-    <div class="dashboard">
-        
+        <!-- Employee Profile (Full Width) -->
         <div class="profile-overview">
             <h2>Employee Profile</h2>
             <div class="profile-details-grid">
-
-                
                 @Html.Partial("_EmployeeDetails", Model)
-
-
             </div>
         </div>
 
-        
+        <!-- Stats and Feedback (Side by Side) -->
         <div class="stats-feedback-container">
+            <!-- Statistics Section -->
             <div class="stats-section">
                 <h2>Statistics Overview</h2>
                 @Html.Partial("_stats-grid", Model)
-
-                
             </div>
 
+            <!-- Feedback Section -->
             <div class="feedback-section">
                 <h2>Manager's Feedback</h2>
                 <div class="feedback-container">
@@ -47,6 +44,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
-

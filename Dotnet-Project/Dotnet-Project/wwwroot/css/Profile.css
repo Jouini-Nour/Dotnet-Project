@@ -1,48 +1,85 @@
-﻿
-
-.profile-section {
-    margin-bottom: 2rem;
-    width: 100%;
+﻿/* Root Variables for Colors */
+:root {
+    --primary-color: #1A1A1A;
+    --secondary-color: #333333;
+    --text-color: #FFFFFF;
+    --muted-text-color: #666666;
+    --accent-color: linear-gradient(45deg, #FF6B6B, #556FFF);
 }
 
-.profile-card {
-    display:grid;
-    grid-template-columns: 1fr 2fr;
-    background: #1A1A1A;
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Profile Overview (Full Width) */
+.profile-overview {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+    .profile-overview h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+
+.profile-details-grid {
+    background: var(--primary-color);
     border-radius: 12px;
     padding: 2rem;
-    
 }
-.stats-feedback-container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+
+/* Profile Card */
+.profile-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
 }
-.profile-center {
+
+.profile-image-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    margin-bottom: 2rem;
+    gap: 1rem;
 }
 
 .profile-image {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 1rem;
 }
 
-.profile-name {
-    color: #ffffff;
+.name-title h2 {
     font-size: 1.25rem;
-    margin: 0.5rem 0;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
 }
 
-.profile-title {
-    color: #666666;
+.name-title .title {
     font-size: 0.875rem;
-    margin: 0;
+    color: var(--muted-text-color);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .contact-info {
@@ -57,33 +94,50 @@
     gap: 1rem;
 }
 
-.contact-icon {
-    width: 20px;
-    height: 20px;
-}
+    .contact-item img {
+        width: 20px;
+        height: 20px;
+    }
 
-.contact-text {
+.contact-details {
     display: flex;
     flex-direction: column;
 }
 
-.contact-label {
-    color: #666666;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-}
+    .contact-details .label {
+        font-size: 0.75rem;
+        color: var(--muted-text-color);
+        text-transform: uppercase;
+    }
 
-.contact-value {
-    color: #ffffff;
-    font-size: 0.875rem;
-}
+    .contact-details .value {
+        font-size: 0.875rem;
+        color: var(--text-color);
+    }
 
-.dashboard-grid {
+/* Stats and Feedback Container (Side by Side) */
+.stats-feedback-container {
     display: flex;
-    
     gap: 2rem;
+    margin-top: 2rem;
 }
 
+.stats-section,
+.feedback-section {
+    flex: 1; /* Equal width for both sections */
+    background: var(--primary-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+    .stats-section h2,
+    .feedback-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--text-color);
+    }
+
+/* Statistics Grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -91,10 +145,9 @@
 }
 
 .stat-card {
-    background: #1A1A1A;
+    background: var(--secondary-color);
     border-radius: 12px;
     padding: 1.5rem;
-    max-width: 300px; 
 }
 
 .stat-header {
@@ -107,6 +160,9 @@
 .colored-icon {
     width: 32px;
     height: 32px;
+    background: var(--accent-color);
+    border-radius: 8px;
+    padding: 6px;
 }
 
 .stat-info {
@@ -116,16 +172,16 @@
 .stat-value {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .stat-unit {
-    color: #666666;
+    color: var(--muted-text-color);
     font-size: 0.875rem;
 }
 
 .stat-period {
-    color: #666666;
+    color: var(--muted-text-color);
     font-size: 0.75rem;
 }
 
@@ -136,52 +192,58 @@
 .evaluation-select {
     width: 100%;
     padding: 0.75rem;
-    background: #333333;
+    background: var(--secondary-color);
     border: none;
     border-radius: 6px;
-    color: #ffffff;
+    color: var(--text-color);
     margin-top: 1rem;
 }
 
-.feedback-column h2 {
-    color: #ffffff;
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
+/* Feedback Section */
+.feedback-container {
+    margin-top: 1rem;
 }
 
-.feedback-list {
+.comments-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.feedback-item {
-    background: #1A1A1A;
+.comment {
+    background: var(--secondary-color);
     border-radius: 12px;
-    padding: 1.25rem;
-    max-width: 300px; 
+    padding: 1rem;
 }
 
-
-.feedback-date {
-    color: #ffffff;
+.comment-date {
     font-size: 0.875rem;
+    color: var(--muted-text-color);
     margin-bottom: 0.5rem;
 }
 
-.feedback-content {
-    color: #ffffff;
+.comment-content {
+    font-size: 0.875rem;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
 }
 
-.feedback-employee {
-    color: #666666;
+.comment-author {
     font-size: 0.875rem;
+    color: var(--muted-text-color);
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        grid-template-columns: 1fr;
+    }
 
-.colored-icon {
-    background: linear-gradient(45deg, #FF6B6B, #556FFF);
-    border-radius: 8px;
-    padding: 6px;
+    .stats-feedback-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
