@@ -1,11 +1,12 @@
-﻿
+﻿@model Dotnet_Project.Models.Project
+
 <div class="period-card">
     <div class="period-icon">
         <img src="~/images/calendar.svg" alt="Calendar" />
     </div>
     <div>
         <h3>Estimated Period</h3>
-        <p>26/01/2025-30/07/2025</p>
+        <p>@Model.startDate - @Model.endDate</p>
     </div>
 </div>
 
@@ -23,5 +24,5 @@
         
     </div>
     
-    <div class="stage-number">STAGE 3</div>
+    <div class="stage-number"><@Model.Progress</div>
 </div>

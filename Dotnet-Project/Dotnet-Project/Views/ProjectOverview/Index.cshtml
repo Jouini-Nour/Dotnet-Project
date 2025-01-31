@@ -1,14 +1,16 @@
-﻿@section Styles {
+﻿@model Dotnet_Project.Models.Project
+
+@section Styles {
     <link rel="stylesheet" href="~/css/ProjectOverview.css">
 }
 
 @section Navbar {
     <nav class="nav-menu">
-        <a href="/project-overview" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectOverview" ? "active" : "")">
+        <a href="@Url.Action("Index", "Home")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")">
             <img src="~/images/document-text.svg" />
             <span>Project Overview</span>
         </a>
-        <a href="/tasks-workflow" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "TasksWorkflow" ? "active" : "")">
+        <a href="@Url.Action("Index", "ProjectTask")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectTask" ? "active" : "")">
             <img src="~/images/message-text.svg" />
             <span>Tasks & Workflow</span>
         </a>
@@ -22,17 +24,19 @@
             <div class="details-grid">
                 <div class="details-section">
                     
-                    <partial name="_ProjectDetails" />
+                    @Html.Partial("_ProjectDetails", Model)
+
                 </div>
                 <div class="purpose-section" >
                     <h2>Purpose and Key Impact</h2>
-                    <partial name="_PurposeImpact" />
+                    @Html.Partial("_PurposeImpact", Model.Description)
+                    
                 </div>
             </div>
             <h2>Project team members </h2>
             <div class="team-section">
+                @Html.Partial("_Team", Model.TeamMembers)
                 
-                <partial name="_Team" />
             </div>
         </div>
     </div>

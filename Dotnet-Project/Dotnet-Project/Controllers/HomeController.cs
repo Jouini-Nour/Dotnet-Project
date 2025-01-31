@@ -1,5 +1,6 @@
 using Dotnet_Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Diagnostics;
 
 namespace Dotnet_Project.Controllers
@@ -12,16 +13,107 @@ namespace Dotnet_Project.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
-            var model=new Employee();
-            model.Name = "John";
-            model.Department = "IT";
-            model.Post = "Developer";
-            
-            
-            return View();
+            // Create a new Employee object (John Doe)
+            var johnDoe = new Employee
+            {
+                Id = 1,
+                Name = "John Doe",
+                Department = "Engineering",
+                Post = "Software Developer",
+                Email = "john.doe@example.com",
+                Image = "https://example.com/john-doe.jpg",
+                Phone = "123-456-7890",
+                Gender = Gender.Male,
+                Evaluation = Evaluation.Good
+            };
+
+            // Create another Employee object (Jane Smith)
+            var janeSmith = new Employee
+            {
+                Id = 2,
+                Name = "Jane Smith",
+                Department = "Design",
+                Post = "UI/UX Designer",
+                Email = "jane.smith@example.com",
+                Image = "https://example.com/jane-smith.jpg",
+                Phone = "987-654-3210",
+                Gender = Gender.Female,
+                Evaluation = Evaluation.Excellent
+            };
+
+            // Create the main model (John Doe) with tasks and feedbacks
+            var model = new Employee
+            {
+                Id = 1,
+                Name = "John Doe",
+                Department = "Engineering",
+                Post = "Software Developer",
+                Email = "john.doe@example.com",
+                Image = "https://example.com/john-doe.jpg",
+                Phone = "123-456-7890",
+                Gender = Gender.Male,
+                Evaluation = Evaluation.Good,
+                Tasks = new List<ProjectTask>
+        {
+            new ProjectTask
+            {
+                TaskId = 1,
+                Title = "Implement Authentication",
+                dueDate = DateTime.Now.AddDays(-5),
+                Status = Status.InProgress,
+                CreationDate = DateTime.Now.AddDays(-10),
+                Description = "Implement user authentication using JWT."
+            }
+        },
+                WrittenFeedbacks = new List<Feedback>
+        {
+            new Feedback
+            {
+                Id = 1,
+                Date = DateTime.UtcNow.AddDays(-5),
+                Description = "Great teamwork on the authentication feature!",
+                WriterId = 1, // John Doe wrote this feedback
+                Writer = johnDoe, // Populate the Writer navigation property
+                ReceiverId = 2 // Feedback for Jane Smith
+            }
+        },
+                ReceivedFeedbacks = new List<Feedback>
+        {
+            new Feedback
+            {
+                Id = 2,
+                Date = DateTime.UtcNow.AddDays(-3),
+                Description = "Excellent job on the database design!",
+                WriterId = 2, // Jane Smith wrote this feedback
+                Writer = janeSmith, // Populate the Writer navigation property
+                ReceiverId = 1 // Feedback for John Doe
+            }
+        }
+            };
+
+            // Pass the model to the view
+            return View("~/Views/Profile/Index.cshtml", model);
+        }
+        public IActionResult test()
+        {
+            var model = new Project();
+            model.startDate = DateTime.Now;
+            model.endDate = DateTime.Now.AddDays(30);
+            model.ProjectName = "Project 1";
+            model.Description = new ProjectDescription { KeyFeatures = "This is a project", TechnologiesUsed="test" };
+            model.Chef = new Employee { Name = "John Doe" };
+            model.TeamMembers.Add(new Employee { Name = "Jane Doe" });
+            model.TeamMembers.Add(new Employee { Name = "Alice" });
+            model.TeamMembers.Add(new Employee { Name = "Bob" });
+            model.Progress = Progress.Stage0;
+
+
+
+
+            return View("~/Views/ProjectOverview/Index.cshtml",model);
+
         }
 
 
