@@ -51,14 +51,16 @@ namespace Dotnet_Project.Controllers
             var model = new Employee
             {
                 Id = 1,
-                Name = "John Doe",
-                Department = "Engineering",
-                Post = "Software Developer",
-                Email = "john.doe@example.com",
-                Image = "https://example.com/john-doe.jpg",
-                Phone = "123-456-7890",
+                Post = "Developper",
+                Phone = "23456654",
+                Email = "johndoe@example.com",
+                Image = "https://example.com/images/johndoe.jpg",
                 Gender = Gender.Male,
-                Evaluation = Evaluation.Good,
+                Evaluation = Evaluation.Excellent,
+                OverdueTasks = 4,
+                CompletedTasks = 5,
+                AbsenceDays = 20,
+                HoursWorked = 20,
                 Tasks = new List<ProjectTask>
         {
             new ProjectTask

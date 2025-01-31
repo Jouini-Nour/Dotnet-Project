@@ -1,4 +1,4 @@
-﻿/* Root Variables for Colors */
+﻿
 :root {
     --primary-color: #1A1A1A;
     --secondary-color: #333333;
@@ -7,7 +7,7 @@
     --accent-color: linear-gradient(45deg, #FF6B6B, #556FFF);
 }
 
-/* Global Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
     line-height: 1.6;
 }
 
-/* Dashboard Container */
+
 .dashboard-container {
     padding: 2rem;
     max-width: 1200px;
@@ -46,12 +46,7 @@ body {
     padding: 2rem;
 }
 
-/* Profile Card */
-.profile-card {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1.5rem;
-}
+
 
 .profile-image-container {
     display: flex;
@@ -115,7 +110,7 @@ body {
         color: var(--text-color);
     }
 
-/* Stats and Feedback Container (Side by Side) */
+
 .stats-feedback-container {
     display: flex;
     gap: 2rem;
@@ -124,7 +119,7 @@ body {
 
 .stats-section,
 .feedback-section {
-    flex: 1; /* Equal width for both sections */
+    flex: 1; 
     background: var(--primary-color);
     border-radius: 12px;
     padding: 1.5rem;
@@ -137,7 +132,7 @@ body {
         color: var(--text-color);
     }
 
-/* Statistics Grid */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -199,7 +194,7 @@ body {
     margin-top: 1rem;
 }
 
-/* Feedback Section */
+
 .feedback-container {
     margin-top: 1rem;
 }
@@ -233,14 +228,14 @@ body {
     color: var(--muted-text-color);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .profile-card {
         grid-template-columns: 1fr;
     }
 
     .stats-feedback-container {
-        flex-direction: column; /* Stack sections vertically on smaller screens */
+        flex-direction: column; 
     }
 
     .stats-grid {
