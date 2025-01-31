@@ -10,13 +10,13 @@
 }
 @section Navbar {
     <nav class="nav-menu">
-        <a href="@Url.Action("Index", "Employee")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">
-            <img src="~/images/user.svg" />
-            <span>Employees</span>
+        <a href="@Url.Action("Index", "Home")" class="nav-item  active">
+            <img src="~/images/document-text.svg" />
+            <span>Project Overview</span>
         </a>
-        <a href="@Url.Action("Index", "Meeting")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Meeting" ? "active" : "")">
+        <a href="@Url.Action("Index", "ProjectTask")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "ProjectTask" ? "active" : "")">
             <img src="~/images/message-text.svg" />
-            <span>Meetings</span>
+            <span>Tasks & Workflow</span>
         </a>
     </nav>
 }

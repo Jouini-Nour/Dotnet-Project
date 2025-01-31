@@ -14,6 +14,10 @@
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<ProjectDescription> ProjectDescriptions { get; set; }
+
+
 
 
 
@@ -26,23 +30,54 @@
                       .HasMany(e => e.Tasks)
                       .WithOne(t => t.Employee)
                       .HasForeignKey(t => t.EmployeeId);
+            modelBuilder.Entity<Employee>()
+                       .HasOne(t => t.Project)
+                      .WithMany(p => p.TeamMembers)
+                      .HasForeignKey(t => t.ProjectId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Project>()
+       .HasOne(p => p.Chef)  // Project has one Chef (Employee)
+       .WithMany()  // Each Employee can be Chef for multiple Projects
+       .HasForeignKey(p => p.ChefId)  // The foreign key in Project
+       .OnDelete(DeleteBehavior.Restrict);
             // Configure relationships and other constraints if necessary
             modelBuilder.Entity<ProjectTask>(entity =>
             {
                 entity.HasKey(t => t.TaskId);
                 entity.ToTable("ProjectTasks");
-                // Relationship with Employee
+
+                // Relationship with Employee (Avoid Cascade Delete)
                 entity.HasOne(t => t.Employee)
                       .WithMany(e => e.Tasks)
-                        .HasForeignKey(t => t.EmployeeId)
-                        .OnDelete(DeleteBehavior.Cascade);
+                      .HasForeignKey(t => t.EmployeeId)
+                      .OnDelete(DeleteBehavior.Restrict); // Change from Cascade to Restrict
+
+                // Relationship with Project (Avoid Cascade Delete)
+                entity.HasOne(t => t.Project)
+                      .WithMany(p => p.Tasks)
+                      .HasForeignKey(t => t.ProjectId)
+                      .OnDelete(DeleteBehavior.Restrict); // Change from Cascade to Restrict
 
                 // Set default value for CreationDate
                 entity.Property(t => t.CreationDate)
                       .HasDefaultValueSql("GETDATE()");
             });
+            modelBuilder.Entity<Project>()
+                      .HasMany(e => e.Tasks)
+                      .WithOne(t => t.Project)
+                      .HasForeignKey(t => t.ProjectId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Project>()
+     .HasMany(p => p.TeamMembers) // A project has many employees
+     .WithOne(e => e.Project)    // An employee has one project
+     .HasForeignKey(e => e.ProjectId) // Foreign key in Employee table
+     .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete
 
-
+            modelBuilder.Entity<Project>()
+    .HasOne(p => p.Description)
+    .WithOne(d => d.Project)
+    .HasForeignKey<ProjectDescription>(d => d.ProjectId) // Explicit foreign key
+  .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Meeting>()
            .HasOne(m => m.Moderator)
            .WithMany()
@@ -84,6 +119,8 @@
                   CompletedTasks = 5,
                   AbsenceDays = 20,
                   HoursWorked = 20,
+                  ProjectId = 2
+
               },
               new Employee
               {
@@ -100,6 +137,8 @@
                   CompletedTasks = 5,
                   AbsenceDays = 20,
                   HoursWorked = 20,
+                  ProjectId = 2
+
               },
               new Employee
               {
@@ -116,6 +155,8 @@
                   CompletedTasks= 5,
                   AbsenceDays= 20,
                   HoursWorked= 20,
+                  ProjectId = 2
+
               });
             modelBuilder.Entity<Meeting>().HasData(
                   new Meeting
@@ -156,7 +197,9 @@
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.InProgress,
                     CreationDate = new DateTime(2024, 12, 31),
-                    Description = "Fix the login page bug on the company website."
+                    Description = "Fix the login page bug on the company website.",
+                    ProjectId = 2
+
                 },
                 new ProjectTask
                 {
@@ -165,7 +208,9 @@
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.NotStarted,
                     CreationDate = new DateTime(2024, 12, 31),
-                    Description = "Update the records of all employees in the HR system."
+                    Description = "Update the records of all employees in the HR system.",
+                    ProjectId = 2
+
                 },
                 new ProjectTask
                 {
@@ -175,7 +220,9 @@
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.Completed,
                     CreationDate = new DateTime(2024, 12, 31),
-                    Description = "Prepare and submit the quarterly financial report to management."
+                    Description = "Prepare and submit the quarterly financial report to management.",
+                    ProjectId = 2
+
                 },
                 new ProjectTask
                 {
@@ -184,16 +231,36 @@
                     dueDate = new DateTime(2024, 12, 31),
                     Status = Status.NotStarted,
                     CreationDate = new DateTime(2024, 12, 31),
-                    Description = "Fix the login page bug on the company website."
+                    Description = "Fix the login page bug on the company website.",
+                    ProjectId = 2
                 }
             );
+            modelBuilder.Entity<Project>().HasData(
+      new Project
+      {
+          Id = 2, // Project ID
+          ProjectName = "ERP System Development",
+          ChefId = 1, // Employee ID 1 as the Chef
+          Progress = Progress.Stage2,
+          startDate = new DateTime(2024, 10, 1),
+          endDate = new DateTime(2025, 5, 30)
+      });
+
+
+            modelBuilder.Entity<ProjectDescription>().HasData(
+     new ProjectDescription
+     {
+         Id = 3, // Description ID (must match ProjectId)
+         ProjectId = 2, // Explicitly set the foreign key
+         KeyFeatures = "Modular architecture, Role-based access, Multi-tenancy",
+         TechnologiesUsed = "ASP.NET Core, Entity Framework, React"
+     }
+     );
+
+
+
+
             
-
-
-
-
-
-
 
         }
 

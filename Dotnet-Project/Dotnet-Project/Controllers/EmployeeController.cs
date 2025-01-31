@@ -102,6 +102,17 @@ namespace Dotnet_Project.Controllers
             ViewBag.Employees = _employeeRepository.GetAllEmployees().ToList();
             return View("EmployeeManagement", employee);
         }
+        public IActionResult EmployeeProductivity(int id)
+        {
+            var employee = _employeeRepository.GetEmployeeById(id);  // Récupérer l'employé par ID
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            ViewBag.Employees = _employeeRepository.GetAllEmployees().ToList();
+            return View("Views/Profile/Index.cshtml", employee);
+        }
+
     }
 }
 

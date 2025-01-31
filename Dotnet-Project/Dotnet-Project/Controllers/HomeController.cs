@@ -1,5 +1,6 @@
 using Dotnet_Project.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Diagnostics;
 
@@ -8,14 +9,16 @@ namespace Dotnet_Project.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
         public IActionResult Index()
         {
-            // Create a new Employee object (John Doe)
+            /*// Create a new Employee object (John Doe)
             var johnDoe = new Employee
             {
                 Post = "Developper",
@@ -95,10 +98,15 @@ namespace Dotnet_Project.Controllers
                 ReceiverId = 1 // Feedback for John Doe
             }
         }
-            };
+            };*/
+            var project= _context.Projects
+                                   .Include(e => e.TeamMembers)
+                                   .Include(e => e.Tasks)
+                                   .Include(e => e.Description)
+                                   .FirstOrDefault();
 
             // Pass the model to the view
-            return View("~/Views/Profile/Index.cshtml", model);
+            return View("~/Views/ProjectOverview/Index.cshtml", project);
         }
         public IActionResult test()
         {
@@ -112,6 +120,7 @@ namespace Dotnet_Project.Controllers
             model.TeamMembers.Add(new Employee { Name = "Alice" });
             model.TeamMembers.Add(new Employee { Name = "Bob" });
             model.Progress = Progress.Stage0;
+
 
 
 

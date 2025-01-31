@@ -4,14 +4,13 @@
     ViewData["Title"] = "Employee";
 }
 @{
-    ViewData["ActionName"] = "EmployeeManagement";
+    ViewData["ActionName"] = "EmployeeProductivity"; 
     ViewData["ControllerName"] = "Employee";
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/total.css">
+    <link rel="stylesheet" href="~/css/employeeList.css">
 }
-
 @section Navbar {
     <nav class="nav-menu">
         <a href="@Url.Action("Index", "Employee")" class="nav-item @(ViewContext.RouteData.Values["controller"].ToString() == "Employee" ? "active" : "")">

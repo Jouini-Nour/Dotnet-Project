@@ -12,12 +12,16 @@
     {
         public int Id { get; set; }
         public Employee Chef { get; set; }
+        public int?  ChefId { get; set; }
+
         public string ProjectName { get; set; }
         public ProjectDescription Description { get; set; }
         public Progress Progress { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         public ICollection<Employee> TeamMembers { get; set; } = new List<Employee>();
+        public ICollection<ProjectTask> Tasks { get; set; } = new List<ProjectTask>();
+
 
 
     }

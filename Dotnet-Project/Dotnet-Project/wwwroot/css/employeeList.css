@@ -169,7 +169,10 @@
     border-collapse: collapse;
     margin-top: 20px;
 }
-
+    .team-table th {
+        background: #242424;
+        color: #A1A1A1;
+    }
     .team-table th,
     .team-table td {
         padding: 12px;
