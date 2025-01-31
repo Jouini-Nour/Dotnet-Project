@@ -23,6 +23,7 @@ namespace Dotnet_Project.Repositories.Employees
         {
             return _context.Employees
                 .Include(e => e.Tasks)
+                .Include(e => e.ReceivedFeedbacks)
                 .FirstOrDefault(e => e.Id == id);
                 
      

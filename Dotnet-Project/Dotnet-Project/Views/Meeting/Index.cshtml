@@ -1,5 +1,4 @@
-﻿@model Dotnet_Project.Models.Meeting
-
+﻿
 
 @{
     ViewData["Title"] = "Meeting";
@@ -75,10 +74,17 @@
        <div class="modal-content">
           <h2>Schedule a meeting</h2>
          <div class="form">
-               <!-- <form asp-action="Create" method="post">
+            
+            <form asp-controller="Meeting" asp-action="Create" method="post">
                 <div class="form-group">
-                    <label for="participant">Participant</label>
-                    <input type="number" id="participant" name="ParticipantId" class="form-control" />
+                    <label for="ParticipantId">Participant</label>
+                    <select name="ParticipantId" id="ParticipantId" class="form-control" required>
+                        <option value="">Select Participant</option>
+                        @foreach (var employee in ViewBag.Employees)
+                        {
+                            <option value="@employee.Value">@employee.Text</option>
+                        }
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -87,60 +93,34 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="moderator">Moderator</label>
-                    <input type="number" id="moderator" name="ModeratorId" class="form-control" />
+                    <label for="ModeratorId">Moderator</label>
+                    <select name="ModeratorId" id="ModeratorId" class="form-control" required>
+                        <option value="">Select Moderator</option>
+                        @foreach (var employee in ViewBag.Employees)
+                        {
+                            <option value="@employee.Value">@employee.Text</option>
+                        }
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date</label>
-                    <input type="date" id="date" name="Date" class="form-control" />
+                    <input type="date" id="date" name="Date" class="form-control" required />
                 </div>
 
                 <div class="form-group">
                     <label for="time">Time</label>
-                    <input type="time" id="time" name="Time" class="form-control" />
+                    <input type="time" id="time" name="Time" class="form-control" required />
                 </div>
 
                 <div class="modal-actions">
                     <button type="submit" class="btn btn-save">Save</button>
                     <a href="@Url.Action("Index", "Meeting")" class="btn btn-cancel">Cancel</a>
                 </div>
-                </form>-->
+            </form>
 
-              <form asp-action="Create" method="post">
-                <div class="form-group">
-                    <label asp-for="ParticipantId">Participant</label>
-                    <select asp-for="ParticipantId" asp-items="ViewBag.Employees" class="form-control number">
-                        <option value="">Select Participant</option>
-                    </select>
-                </div>
 
-                <div class="form-group">
-                    <label asp-for="ModeratorId">Moderator</label>
-                    <select asp-for="ModeratorId" asp-items="ViewBag.Employees" class="form-control number">
-                        <option value="">Select Moderator</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Date">Date</label>
-                    <input asp-for="Date" class="form-control" type="date" />
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Time">Time</label>
-                    <input asp-for="Time" class="form-control" type="time" />
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Subject">Subject</label>
-                    <input asp-for="Subject" class="form-control subject" />
-                </div>
-                <div class="modal-actions">
-                <button type="submit" class="btn btn-save">Save</button>
-                <a href="@Url.Action("Index", "Meeting")" class="btn btn-cancel">Cancel</a>
-                </div>
-               </form> 
+            
 
 
 

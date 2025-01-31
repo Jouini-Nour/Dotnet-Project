@@ -27,18 +27,21 @@ namespace Dotnet_Project.Controllers
 
         
         [HttpPost]
-        public IActionResult Create([Bind("Description,WriterId,ReceiverId")] Feedback feedback)
+        public IActionResult Create( string Description,int WriterId,int ReceiverId )
         {
            
-            
+            var feed= new Feedback();
+            feed.Description=Description;
+            feed.ReceiverId=ReceiverId;
+            feed.WriterId=WriterId;
              if (ModelState.IsValid)
                 {
-                feedback.Date = DateTime.Now;
-                _feedbackRepository.AddFeedback(feedback);
-                return RedirectToAction("EmployeeManagement", "Employee", new { id = feedback.ReceiverId });
+                feed.Date = DateTime.Now;
+                _feedbackRepository.AddFeedback(feed);
+                return RedirectToAction("EmployeeManagement", "Employee", new { id = feed.ReceiverId });
                 }            
 
-            return RedirectToAction("EmployeeManagement", "Employee", new { id = feedback.ReceiverId });
+            return RedirectToAction("EmployeeManagement", "Employee", new { id = feed.ReceiverId });
         }
 
 
