@@ -19,6 +19,13 @@ namespace Dotnet_Project.Controllers
         public IActionResult Index()
         {
             var employees = _employeeRepository.GetAllEmployees();
+            var totalEmployees = _employeeRepository.GetTotalEmployees();
+            var maleEmployees = _employeeRepository.GetMaleEmployees();
+            var femaleEmployees = _employeeRepository.GetFemaleEmployees();
+            ViewData["TotalEmployees"] = totalEmployees;
+            ViewData["MaleEmployees"] = maleEmployees;
+            ViewData["FemaleEmployees"] = femaleEmployees;
+
             return View(employees);
         }
 

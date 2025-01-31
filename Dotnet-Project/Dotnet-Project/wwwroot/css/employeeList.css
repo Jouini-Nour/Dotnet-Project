@@ -183,7 +183,7 @@
 .member-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 25px;
 }
 
 .profile-img {
@@ -191,4 +191,5 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    margin-right:10px;
 }

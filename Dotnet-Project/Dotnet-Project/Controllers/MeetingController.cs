@@ -40,7 +40,7 @@ namespace Dotnet_Project.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost]                                                                                                        
         public IActionResult Create(int ParticipantId, string Subject, int ModeratorId, DateOnly Date, TimeOnly Time)
         {
             var meet = new Meeting();
@@ -52,15 +52,12 @@ namespace Dotnet_Project.Controllers
 
             if (ModelState.IsValid)
             {
-                Console.WriteLine("hereé");
                 _repository.Add(meet);
                 return RedirectToAction("Index");
             }
 
             ViewBag.Employees = new SelectList(_employeeRepository.GetAllEmployees(), "Id", "Name");
             return RedirectToAction("Index");
-
-
         }
     
 

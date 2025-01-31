@@ -3,6 +3,8 @@
     // ApplicationDbContext
     using Microsoft.EntityFrameworkCore;
     using Dotnet_Project.Models;
+    using Dotnet_Project.Migrations;
+    using static System.Net.Mime.MediaTypeNames;
 
     public class ApplicationDbContext : DbContext
     {
@@ -112,7 +114,7 @@
                   Post = "Developper",
                   Phone = "23456654",
                   Email = "johndoe@example.com",
-                  Image = "https://example.com/images/johndoe.jpg",
+                  Image = "/images/avatar.svg",
                   Gender = Gender.Male,
                   Evaluation = Evaluation.Excellent,
                   OverdueTasks = 4,
@@ -130,7 +132,7 @@
                   Post = "UI/UX Designer",
                   Phone = "23456654",
                   Email = "janesmith@example.com",
-                  Image = "https://example.com/images/janesmith.jpg",
+                  Image = "/images/avatar.svg",
                   Gender = Gender.Male,
                   Evaluation = Evaluation.Excellent,
                   OverdueTasks = 4,
@@ -148,7 +150,7 @@
                   Post = "UI/UX Designer",
                   Phone = "23456654",
                   Email = "alicejohnson@example.com",
-                  Image = "https://example.com/images/alicejohnson.jpg",
+                  Image = "/images/avatar.svg",
                   Gender = Gender.Female,
                   Evaluation = Evaluation.Excellent,
                   OverdueTasks= 4,
