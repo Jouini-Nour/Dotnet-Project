@@ -73,6 +73,7 @@ namespace Dotnet_Project.Controllers
             }
             return View(employee);
         }
+       
         public IActionResult Profile(int id)
         {
             var employee = _employeeRepository.GetEmployeeById(id);
@@ -80,9 +81,14 @@ namespace Dotnet_Project.Controllers
             {
                 return NotFound();
             }
+            Feedback f=new Feedback();
+            employee.ReceivedFeedbacks.Add(f);
 
-            return PartialView("_EmployeeDetails", employee);
+            return View("Views/Profile/Index.cshtml", employee);
+
+
         }
+
         [HttpPost]
         public IActionResult UpdateEvaluation(int id, Evaluation evaluation)
         {
@@ -93,10 +99,11 @@ namespace Dotnet_Project.Controllers
             }
 
             
+
             employee.Evaluation = evaluation;
             _employeeRepository.UpdateEmployee(employee);
 
-            return RedirectToAction("Profile", new { id = id });
+            return View("Views/Profile/Index.cshtml", employee);
         }
         public IActionResult Delete(int id)
         {

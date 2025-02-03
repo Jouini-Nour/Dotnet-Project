@@ -73,7 +73,6 @@
                 </div>
                 <div class="stat-period">for this year</div>
             </div>
-
             <div class="stat-card evaluation-card">
                 <div class="stat-header">
                     <div class="colored-icon"></div>
@@ -87,11 +86,14 @@
                     <select name="evaluation" class="evaluation-select" onchange="this.form.submit()">
                         @foreach (var eval in Enum.GetValues(typeof(Dotnet_Project.Models.Evaluation)))
                         {
-                            <option value="@eval" selected="@(eval.Equals(Model.Evaluation) ? "selected" : null)">@eval</option>
+                            <option value="@((int)eval)" selected="@(eval.Equals(Model.Evaluation) ? "selected" : null)">
+                                @eval
+                            </option>
                         }
                     </select>
                 </form>
             </div>
+
 
         </div>
     </div>

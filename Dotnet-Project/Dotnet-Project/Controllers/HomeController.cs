@@ -19,7 +19,7 @@ namespace Dotnet_Project.Controllers
         public IActionResult Index()
         {
             
-            var johnDoe = new Employee
+            /*var johnDoe = new Employee
             {
                 Post = "Developper",
                 Phone = "23456654",
@@ -108,7 +108,7 @@ namespace Dotnet_Project.Controllers
                                    .FirstOrDefault();
             */
             
-            return View("~/Views/Profile/Index.cshtml", model);
+            return View();
         }
         public IActionResult test()
         {
