@@ -100,15 +100,15 @@ namespace Dotnet_Project.Controllers
                 ReceiverId = 1 // Feedback for John Doe
             }
         }
-            };
-            /*var project= _context.Projects
+            };*/
+            var project= _context.Projects
                                    .Include(e => e.TeamMembers)
                                    .Include(e => e.Tasks)
                                    .Include(e => e.Description)
                                    .FirstOrDefault();
-            */
+           
             
-            return View();
+            return View("Views/ProjectOverview/Index.cshtml", project);
         }
         public IActionResult test()
         {

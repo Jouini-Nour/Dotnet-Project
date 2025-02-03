@@ -6,7 +6,7 @@
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/Employees.css">
+    <link rel="stylesheet" href="~/css/Emp.css">
 }
 @section Navbar {
     <nav class="nav-menu">
@@ -24,7 +24,10 @@
     <div class="dashboard">
         <div  class="profile">
             <div class="employee-section">
-                @Html.Partial("_EmployeeDetails", Model)
+
+                <div class="profile-details-grid">
+                    @Html.Partial("_EmployeeDetails", Model)
+                 </div>
             </div>
            
                 <div class="stat-card">
