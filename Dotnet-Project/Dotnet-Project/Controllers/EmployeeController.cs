@@ -2,6 +2,7 @@
 using Dotnet_Project.Repositories.Employees;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
 {
@@ -81,6 +82,21 @@ namespace Dotnet_Project.Controllers
             }
 
             return PartialView("_EmployeeDetails", employee);
+        }
+        [HttpPost]
+        public IActionResult UpdateEvaluation(int id, Evaluation evaluation)
+        {
+            var employee = _employeeRepository.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            
+            employee.Evaluation = evaluation;
+            _employeeRepository.UpdateEmployee(employee);
+
+            return RedirectToAction("Profile", new { id = id });
         }
         public IActionResult Delete(int id)
         {
