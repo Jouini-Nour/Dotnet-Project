@@ -78,6 +78,20 @@ namespace Dotnet_Project.Controllers
             return View(employee);
         }
        
+        public IActionResult Profile(int id)
+        {
+            var employee = _employeeRepository.GetEmployeeById(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            Feedback f=new Feedback();
+            employee.ReceivedFeedbacks.Add(f);
+
+            return View("Views/Profile/Index.cshtml", employee);
+
+
+        }
 
         [HttpPost]
         public IActionResult UpdateEvaluation(int id, Evaluation evaluation)
