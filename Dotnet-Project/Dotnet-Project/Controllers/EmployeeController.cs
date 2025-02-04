@@ -1,11 +1,15 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Employees;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
+
 {
+    [Authorize(Roles = "HR Manager, Project Manager")]
+
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;

@@ -1,11 +1,14 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Employees;
 using Dotnet_Project.Repositories.Feedbacks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
 {
+    [Authorize(Roles = "HR Manager, Project Manager")]
+
     public class FeedbackController : Controller
     {
         private readonly IFeedbackRepository _feedbackRepository;

@@ -1,12 +1,15 @@
 ﻿namespace Dotnet_Project.Models
 {
     // ApplicationDbContext
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using Dotnet_Project.Models;
   // using Dotnet_Project.Migrations;
     using static System.Net.Mime.MediaTypeNames;
+    using Microsoft.AspNetCore.Identity;
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -26,6 +29,11 @@
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = "1", Name = "HR Manager", NormalizedName = "HR MANAGER" },
+                new IdentityRole { Id = "2", Name = "Project Manager", NormalizedName = "PROJECT MANAGER" }
+            );
+
             modelBuilder.Entity<ProjectTask>()
                     .ToTable("ProjectTasks");
             modelBuilder.Entity<Employee>()
