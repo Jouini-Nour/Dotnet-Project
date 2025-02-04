@@ -83,6 +83,9 @@ namespace Dotnet_Project.Controllers
             }
             Feedback f=new Feedback();
             employee.ReceivedFeedbacks.Add(f);
+            
+
+
 
             return View("Views/Profile/Index.cshtml", employee);
 
