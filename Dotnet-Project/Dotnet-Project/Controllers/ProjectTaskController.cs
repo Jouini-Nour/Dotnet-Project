@@ -6,9 +6,13 @@ using Dotnet_Project.Services;
 using Dotnet_Project.Views.Home;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Dotnet_Project.Controllers
 {
+    [Authorize(Roles = "Project Manager")]
+
+
     public class ProjectTaskController : Controller
     {
         private readonly IProjectTaskService _taskService;

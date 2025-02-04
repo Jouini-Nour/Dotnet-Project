@@ -6,12 +6,17 @@ using Microsoft.EntityFrameworkCore;
 using Dotnet_Project.Services;
 using Dotnet_Project.Repositories.Feedbacks;
 using Dotnet_Project.Repositories.ProjectTasks;
+using Microsoft.AspNetCore.Identity;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
@@ -28,6 +33,13 @@ builder.Services.AddScoped<IFeedbackRepository, FeedbackRepository>();
 
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await IdentitySeeder.SeedRolesAndAdmin(userManager, roleManager);
+}
+
 
 
 // Configure the HTTP request pipeline.
@@ -42,11 +54,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}");
 
 app.Run();
