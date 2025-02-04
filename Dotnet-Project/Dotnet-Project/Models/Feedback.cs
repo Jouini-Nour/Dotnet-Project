@@ -8,7 +8,7 @@
 
         // The employee who wrote the feedback
         public int WriterId { get; set; }
-        public Employee Writer { get; set; }
+        public virtual Employee Writer { get; set; }
 
         // The employee who received the feedback
         public int ReceiverId { get; set; }

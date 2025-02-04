@@ -1,13 +1,14 @@
-﻿@model ICollection<Feedback>
+﻿@model Dotnet_Project.Models.Employee
 
-    <div class="comments-list">
-    @foreach (var item in Model){
-
-            <div class="comment">
+<div class="comments-list">
+    @foreach (var item in Model.ReceivedFeedbacks ?? new List<Feedback>())
+    {
+        <div class="comment">
             <div class="comment-date">@item.Date</div>
-            <div class="comment-content">@item.Description </div>
-            <div class="comment-author">  by @item.Writer.Name</div>
+            <div class="comment-content">@item.Description</div>
+            <div class="comment-author">
+                by @(item.Writer != null ? item.Writer.Name : "Unknown Writer")
             </div>
-        
+        </div>
     }
-    </div>
+</div>

@@ -79,10 +79,10 @@ namespace Dotnet_Project.Controllers
         }
        
 
-       /* [HttpPost]
+        [HttpPost]
         public IActionResult UpdateEvaluation(int id, Evaluation evaluation)
         {
-            var employee = _employeeRepository.GetEmployeeById(id);
+            Employee employee = _employeeRepository.GetEmployeeById(id);
             if (employee == null)
             {
                 return NotFound();
@@ -94,7 +94,7 @@ namespace Dotnet_Project.Controllers
             _employeeRepository.UpdateEmployee(employee);
 
             return View("Views/Profile/Index.cshtml", employee);
-        }*/
+        }
 
         public IActionResult Delete(int id)
         {
