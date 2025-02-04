@@ -1,11 +1,15 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Employees;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
+
 {
+    [Authorize(Roles = "HR Manager, Project Manager")]
+
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -83,9 +87,6 @@ namespace Dotnet_Project.Controllers
             }
             Feedback f=new Feedback();
             employee.ReceivedFeedbacks.Add(f);
-            
-
-
 
             return View("Views/Profile/Index.cshtml", employee);
 
@@ -107,7 +108,8 @@ namespace Dotnet_Project.Controllers
             _employeeRepository.UpdateEmployee(employee);
 
             return View("Views/Profile/Index.cshtml", employee);
-        }
+        }*/
+
         public IActionResult Delete(int id)
         {
             var employee = _employeeRepository.GetEmployeeById(id);

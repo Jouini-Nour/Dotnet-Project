@@ -1,12 +1,15 @@
 ﻿using Dotnet_Project.Models;
 using Dotnet_Project.Repositories.Employees;
 using Dotnet_Project.Repositories.Meetings;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dotnet_Project.Controllers
 {
+    [Authorize(Roles = "HR Manager")]
+
     public class MeetingController : Controller
     {
         private readonly IMeetingRepository _repository;

@@ -24,7 +24,7 @@ namespace Dotnet_Project.Repositories.Employees
             return _context.Employees
                 .Include(e => e.Tasks)
                 .Include(e => e.ReceivedFeedbacks)
-                .Include(e => e.WrittenFeedbacks)
+                
                 .FirstOrDefault(e => e.Id == id);
                 
      

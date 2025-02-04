@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null; // Disable shared layout
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #141414;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .login-container {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+            .login-container h2 {
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+
+        .form-control {
+            background: #2a2a2a;
+            border: none;
+            color: #ffffff;
+        }
+
+            .form-control::placeholder {
+                color: #aaaaaa;
+            }
+
+        .btn-login {
+            background: linear-gradient(90deg, #ff6b6b, #6b5b95); /* Initial Gradient */
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: 600;
+            color: white;
+            transition: background 0.4s ease-in-out;
+        }
+
+            .btn-login:hover {
+                background: linear-gradient(90deg, #e35757, #6b5b95); /* Gradient on Hover */
+            }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger">@ViewBag.Error</div>
+        }
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="form-group mb-3">
+                <input type="email" name="email" class="form-control" placeholder="Email" required />
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Password" required />
+            </div>
+
+            <button type="submit" class="btn btn-login">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
